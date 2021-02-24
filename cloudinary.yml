@@ -1,0 +1,12 @@
+production:
+  cloud_name: "dhj0qswpc"
+  api_key: "258174156815164"
+  api_secret: "_IUtEwXYoXYemtYTNI_Ik9r8YYE"
+  secure: true
+  cdn_subdomain: true
+deployment:
+  cloud_name: "dhj0qswpc"
+  api_key: "258174156815164"
+  api_secret: "_IUtEwXYoXYemtYTNI_Ik9r8YYE"
+  secure: true
+  cdn_subdomain: true
