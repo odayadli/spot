@@ -16,8 +16,10 @@ import 'bootstrap';
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { initAutocomplete } from '../components/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
+  initAutocomplete()
 });

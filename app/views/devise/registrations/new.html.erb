@@ -4,10 +4,25 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Given name" }%>
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Surname" }%>
+    <%= f.input :address,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "address" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+    <%= f.label :profile_pic, 'Upload your profile picture:' %>
+    <%= f.file_field :profile_pic, direct_upload: true %>
+
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
