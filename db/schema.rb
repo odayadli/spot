@@ -56,14 +56,6 @@ ActiveRecord::Schema.define(version: 2021_02_25_194300) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_types", force: :cascade do |t|
-    t.string "name"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_user_types_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -77,13 +69,11 @@ ActiveRecord::Schema.define(version: 2021_02_25_194300) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.integer "Type_of_user"
-    t.boolean "trainer"
+    t.boolean "trainer", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "services"
-  add_foreign_key "user_types", "users"
 end
