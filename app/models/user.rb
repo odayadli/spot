@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :profile_pic
+  has_one :service, dependent: :destroy, inverse_of: 'trainer'
 
 end
 

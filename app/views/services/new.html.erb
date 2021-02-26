@@ -1,0 +1,9 @@
+
+<%= simple_form_for @service do |f| %>
+  <%= f.input :name %>
+  <%= f.input :details %>
+  <%= f.input :price_per_hour %>
+  <%= f.input :address %>
+  Is it indoor service?<%= f.input_field :indoor, as: :boolean, checked_value: true, unchecked_value: false %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
