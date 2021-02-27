@@ -1,4 +1,4 @@
-<%= @service.trainer.first_name %>
+<%= @service.trainer.email %>
 <% if @service.trainer.profile_pic.attached? %>
   <%= cl_image_tag @service.trainer.profile_pic, class: "card-image-index", height: 280, width: 322, crop: :fill %>
 <% else %>
@@ -9,4 +9,7 @@
 <% @service.price_per_hour %>
 <%= @service.address %>
 <h4> <%= @service.indoor ? 'Indoor service' : 'Outdoor service' %></h4>
-
+<%= link_to 'delete service',
+            service_path(@service),
+            method: :delete,
+            data: { confirm: "Please press ok if you want to delete your service or cancel to go back to your service" }  %>
