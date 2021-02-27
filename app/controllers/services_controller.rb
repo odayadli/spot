@@ -6,7 +6,6 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service.trainer = current_user
   end
 
   def new
@@ -26,7 +25,7 @@ class ServicesController < ApplicationController
   def edit; end
 
   def update
-    @service.update(service_params)
+    @service.update!(service_params)
     redirect_to service_path(@service)
   end
 
@@ -38,7 +37,7 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:name, :details, :price_per_hour, :photo, :address)
+    params.require(:service).permit(:name, :details, :price_per_hour, :photo, :address, :indoor)
   end
 
   def find_service
