@@ -9,13 +9,13 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @service = Service.find(params[:surfboard_id])
+    @service = Service.find(params[:service_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.service = Service.find(params[:surfboard_id])
+    @booking.service = Service.find(params[:service_id])
     @booking.client = current_user
     if @booking.save!
       redirect_to booking_path(@booking)
@@ -45,4 +45,20 @@ class BookingsController < ApplicationController
     @old_bookings = current_user.bookings.where("end_date < ?", now)
   end
 
+  def bookings_requests
+    @bookings_requested = Booking.select { |booking| booking.service.owner == current_user }
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.client = current_user
+    @booking.destroy
+    redirect_to my_bookings_bookings_path
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:service_id, :user_id, :status, :start_date, :end_date, :approved)
+  end
 end
