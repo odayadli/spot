@@ -15,3 +15,46 @@
 .navbar-lewagon-black {
   background-color: grey;
 }
+
+
+.centre {
+  overflow: hidden;
+}
+
+
+.nav-left {
+  float: left;
+}
+
+.nav-right {
+  float: right;
+  line-height: 67px;
+}
+
+.nav-right img {
+  height: 40px;  
+}
+
+.nav-logo {
+}
+
+
+.menu-wrap {
+ line-height: 67px;
+ margin-bottom: 0;
+}
+
+.nav-logo, .menu-wrap {
+ float: left;
+}
+
+.menu-wrap li {
+  float: left;
+  list-style: none;
+  margin-right: 36px;
+}
+
+.menu-wrap li:last-child{
+  margin-right: 0;
+}
+
