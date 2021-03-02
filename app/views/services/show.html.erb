@@ -1,0 +1,15 @@
+<%= @service.trainer.email %>
+<% if @service.trainer.profile_pic.attached? %>
+  <%= cl_image_tag @service.trainer.profile_pic, class: "card-image-index", height: 280, width: 322, crop: :fill %>
+<% else %>
+  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+<% end %>
+<strong class="card-text" style="box-shadow: #2E2F30; font-family: 'Londrina Solid', cursive; color: #0E0000 "><%= @service.name %></strong>
+<p><%= @service.details %></p>
+<% @service.price_per_hour %>
+<%= @service.address %>
+<h4> <%= @service.indoor ? 'Indoor service' : 'Outdoor service' %></h4>
+<%= link_to 'delete service',
+            service_path(@service),
+            method: :delete,
+            data: { confirm: "Please press ok if you want to delete your service or cancel to go back to your service" }  %>

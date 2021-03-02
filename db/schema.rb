@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_194300) do
+ActiveRecord::Schema.define(version: 2021_02_27_130935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 2021_02_25_194300) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "service_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean "status", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["service_id"], name: "index_bookings_on_service_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -54,6 +66,11 @@ ActiveRecord::Schema.define(version: 2021_02_25_194300) do
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
+    t.boolean "indoor", default: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_services_on_user_id"
+
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,5 +92,9 @@ ActiveRecord::Schema.define(version: 2021_02_25_194300) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "services"
+  add_foreign_key "bookings", "users"
   add_foreign_key "categories", "services"
+
+  add_foreign_key "services", "users"
 end
