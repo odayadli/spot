@@ -1,0 +1,13 @@
+<h1>This is the booking index page</h1>
+
+<h1>Description</h1>
+<ul>
+<% @bookings.each do |booking| %>
+    <h1>Booking list <%= booking.service.name %></h1>
+    <div>Has been booked by <%=booking.user.email%><li> From: <%=booking.startdate %> ||
+    To: <%=booking.enddate %></li></div>
+    <%=link_to "Manage booking", edit_service_booking_path(booking.service.id, booking.id) %>
+    <%= link_to "Cancel the booking", service_booking_path(booking.service.id, booking.id), method: :delete, data: { confirm: "You sure?" } %><% end %>
+</ul>
+
+<%= link_to "Explore other training services", services_path %>
