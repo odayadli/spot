@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_id: 
+  user_id: 
+  start_date: 2021-02-27 13:09:35
+  end_date: 2021-02-27 13:09:35
+  status: false
+
+two:
+  service_id: 
+  user_id: 
+  start_date: 2021-02-27 13:09:35
+  end_date: 2021-02-27 13:09:35
+  status: false

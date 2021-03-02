@@ -1,0 +1,11 @@
+<h1>This is the booking edit page</h1>
+
+<div class="container">
+  <h1>Edit your booking for <%= @booking.service.name %></h1>
+  <%= simple_form_for @booking do |f| %>
+    <%= f.label :date_of_tour %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.submit "book", class: "btn btn-primary mt-2" %>
+  <% end %>
+</div>
