@@ -52,29 +52,25 @@ ActiveRecord::Schema.define(version: 2021_02_27_130935) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "service_id", null: false
-    t.index ["service_id"], name: "index_categories_on_service_id"
   end
 
   create_table "services", force: :cascade do |t|
-    t.string "name"
     t.text "details"
-    t.string "price_per_hour"
-    t.string "integer"
-    t.string "address"
+    t.string "price_per_hour", null: false
+    t.string "service_address"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-
     t.boolean "indoor", default: false
     t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_services_on_category_id"
     t.index ["user_id"], name: "index_services_on_user_id"
-
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
+    t.string "email", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -86,7 +82,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_130935) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "trainer", default: false
+    t.boolean "trainer"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -94,7 +90,6 @@ ActiveRecord::Schema.define(version: 2021_02_27_130935) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "services"
   add_foreign_key "bookings", "users"
-  add_foreign_key "categories", "services"
-
+  add_foreign_key "services", "categories"
   add_foreign_key "services", "users"
 end
