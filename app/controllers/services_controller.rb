@@ -5,10 +5,10 @@ class ServicesController < ApplicationController
     @services = Service.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
+    @categories = Category.all
     @service = Service.new
   end
 
@@ -37,7 +37,7 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:name, :details, :price_per_hour, :photo, :address, :indoor)
+    params.require(:service).permit(:name, :details, :price_per_hour, :photo, :address, :indoor, :category_id)
   end
 
   def find_service
