@@ -1,0 +1,13 @@
+<h1>YOUR  SERVICES</h1>
+
+<% @services.each do |service| %>
+  <ul>
+    <li><%= service.trainer.email %></li>
+    <li><%= service.details %></li>
+    <li> <%= service.price_per_hour %></li>
+    <li><%= service.service_address %></li>
+  </ul>
+<% end %>
+
+
+

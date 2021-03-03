@@ -1,10 +1,13 @@
 <h1>AVAILABLE SERVICES IN LONDON</h1>
 
-<% @services.each do |service| %>
-  <ul>
-    <li><%= service.trainer.email %></li>
-    <li><%= service.details %></li>
-    <li> <%= service.price_per_hour %></li>
-    <li><%= service.address %></li>
-  </ul>
-<% end %>
+  <% @services.each do |service| %>
+    <ul>
+      <li><%= service.trainer.email %></li>
+      <li><%= service.details %></li>
+      <li> <%= service.price_per_hour %></li>
+      <li><%= service.service_address %></li>
+    </ul>
+  <% end %>
+
+
+

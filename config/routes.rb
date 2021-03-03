@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :services do
     resources :categories, only: %i[index new create]
     resources :bookings, only: %i[show edit update destroy]
+    collection do
+      get :my_services
+    end
   end
   resources :categories, only: %i[show edit update]
   #resources :bookings, only: :index

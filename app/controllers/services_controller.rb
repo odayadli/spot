@@ -3,6 +3,11 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
+
+  end
+
+  def my_services
+    @services = current_user.services
   end
 
   def show; end
