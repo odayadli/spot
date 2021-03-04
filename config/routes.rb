@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
   resources :categories, only: %i[show edit update]
   get :my_bookings, to: 'bookings#my_bookings'
+  resources :reviews, only: [:show, :edit, :update]
 end
