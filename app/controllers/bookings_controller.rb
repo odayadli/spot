@@ -9,9 +9,9 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @booking = Booking.new
     @service = Service.find(params[:service_id])
     @booking.user = current_user
-    @booking = Booking.new
   end
 
   def create
