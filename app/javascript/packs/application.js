@@ -26,7 +26,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
   initAutocomplete()
-  initSelect2()
+  // initSelect2()
   initFlatpickr()
   initAutocomplete_2()
   initMapbox()

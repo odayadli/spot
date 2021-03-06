@@ -1,16 +1,23 @@
-<h1>AVAILABLE SERVICES IN LONDON</h1>
+<div class='container'>
+  <h1>AVAILABLE SERVICES IN LONDON</h1>
+  <div class='cards'>
 
-  <% @services.each do |service| %>
-    <ul>
-      <li><%= service.trainer.email %></li>
-      <li><%= service.details %></li>
-      <li> <%= service.price_per_hour %></li>
-      <li><%= service.service_address %></li>
-    </ul>
-  <% end %>
+    <% @services.each do |service| %>
+
+      <div class='card'>
+        <%= service.trainer.email %>
+        <%= service.details %>
+        <%= service.price_per_hour %>
+        <%= service.service_address %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
 
 <div id="map"
-     style="width: 100%; height: 600px; position: relative; top: 160px;  border-radius: 15px 15px;"
+     style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
