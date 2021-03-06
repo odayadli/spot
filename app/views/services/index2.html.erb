@@ -1,0 +1,35 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Days+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<h1>AVAILABLE TRAINERS IN LONDON</h1>
+
+
+<div class="trainer1">
+<% @services.each do |service| %>
+          <a href="">
+            <img src="https://res.cloudinary.com/ds188a5lw/image/upload/v1614424257/cycling2_1_gqlrop.jpg">   
+            <h3 class="trainer_name"><%= service.trainer.email %></h3>
+            <p class="trainer_description"><%= service.details %></p>
+            <h4><%= service.price_per_hour %></h4>
+             <h4><%= service.address %></h4>
+          </a> 
+        </div>
+<% end %>
+
+
+
+
+<div class="container">
+      <div class="row-index row">
+        <% @surfboards.each do |surfboard| %>
+          <div class="col-sm-12 col-md-4 ">
+            <div class="card-index" style="box-shadow: #2E2F30; font-family: 'Londrina Solid', cursive; color: #0E0000">
+              <a href="<%= surfboard_path(surfboard) %>">
+              <% if surfboard.photo.attached? %>
+              <%= cl_image_tag surfboard.photo.key, height: 280, width: 312, crop: :fill %>
+              <% else %>
+                <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1613352835/u6u3dr91qab0qzfvu18uj6v31agh.jpg", height: 280, width: 312, crop: :fill %>
+                <% end %>
+                </a>
+              <div>
