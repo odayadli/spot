@@ -11,7 +11,7 @@
 
 <%= @service.service_address %>
 <h4> <%= @service.indoor ? 'Indoor service' : 'Outdoor service' %></h4>
-<%=  link_to "add a category", new_service_category_path(@service) %>
+<%=  link_to "add a category", new_category_path%>
 <%= link_to 'delete service',
             service_path(@service),
             method: :delete,
