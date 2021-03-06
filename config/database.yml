@@ -23,8 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: spot_development
-
+  database: spot_db
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -80,6 +79,6 @@ test:
 #
 production:
   <<: *default
-  database: spot_production
+  database: spot_db
   username: spot
   password: <%= ENV['SPOT_DATABASE_PASSWORD'] %>

@@ -4,9 +4,15 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :services do
     resources :categories, only: %i[index new create]
-    resources :bookings, only: [:show, :edit, :update, :destroy]
+    resources :bookings, only: %i[new create]
+    collection do
+      get :my_services
+    end
   end
-
-  #resources :bookings, only: :index
+  resources :bookings, only: [:show, :edit, :update, :destroy] do
+    resources :reviews, only: [:new, :create]
+  end
+  resources :categories, only: %i[show edit update]
   get :my_bookings, to: 'bookings#my_bookings'
+  resources :reviews, only: [:show, :edit, :update]
 end

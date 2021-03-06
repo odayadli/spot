@@ -5,10 +5,9 @@ class CreateServices < ActiveRecord::Migration[6.0]
       t.text :details
       t.string :price_per_hour
       t.string :integer
-      t.string :address
+      t.string :service_address
       t.float :latitude
       t.float :longitude
-
       t.timestamps
     end
   end

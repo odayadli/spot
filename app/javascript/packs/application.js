@@ -17,9 +17,11 @@ import 'bootstrap';
 // const imagePath = (name) => images(name, true)
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { initAutocomplete } from '../components/init_autocomplete';
+import { initSelect2 } from '../components/init_select';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
   initAutocomplete()
+  initSelect2()
 });
