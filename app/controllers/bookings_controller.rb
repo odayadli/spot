@@ -10,7 +10,6 @@ class BookingsController < ApplicationController
 
   def new
     @service = Service.find(params[:service_id])
-    @booking.user = current_user
     @booking = Booking.new
   end
 

@@ -6,7 +6,6 @@ class CreateBookings < ActiveRecord::Migration[6.0]
       t.datetime :start_date
       t.datetime :end_date
       t.boolean :status, default: false
-
       t.timestamps
     end
   end
