@@ -3,18 +3,20 @@
   <div class="centre">
     <div class="nav-left">
      <div class="nav-logo">
+       <a href="<%= root_path%>">
        <img src="https://res.cloudinary.com/ds188a5lw/image/upload/v1614432256/nav_logo_ogyoqc.jpg">
+      </a>
      </div>
      
      <ul class="menu-wrap">
-      <li>Menu</li>
-      <li>Menu</li>
-      <li>Menu</li>
-      <li>Menu</li>
+      <li><a href="<%= services_path %>">Trainers</a></li>
+      <li><a href="<%= root_path%>">Our Mission</a></li>
+      <li><a href="<%= root_path%>">Contact</a></li>
+     
      </ul>
     </div>
     <div class="nav-right">
-     <img src="https://res.cloudinary.com/ds188a5lw/image/upload/v1614432870/account_icon_2_vvsgnd.jpg">
+      <%= link_to "Login", new_user_session_path %>
     </div>
      
   </div>
