@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Days+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Spot</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,13 +13,13 @@
   </head>
     
   <body>
-  <div class="d-flex flex-column min-vh-100">
-    <%= render 'shared/navbar' %>
-    <div class="flex-grow-1">
-    <%= yield %>
-    </div>
-    <%= render 'shared/flashes' %>
-    <%= render 'shared/footer' %>
+    <div class="d-flex flex-column min-vh-100">
+      <%= render 'shared/navbar' %>
+      <div class="flex-grow-1">
+        <%= yield %>
+      </div>
+      <%= render 'shared/flashes' %>
+      <%= render 'shared/footer' %>
     </div>
   </body>
 </html>
