@@ -43,4 +43,3 @@ yarn-debug.log*
 *.swp
 .DS_Store
 
-~/code/odayadli/spot/config/database.yml
