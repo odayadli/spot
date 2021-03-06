@@ -15,7 +15,11 @@
     </ul>
   </div>
 
+  <% if user_signed_in? %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %> 
+  <% else %> 
   <div class="nav-right">
     <%= link_to "Login", new_user_session_path %>
+  <% end %>
   </div>
 </div>
