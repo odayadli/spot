@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Days+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Spot</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
     
   <body>
-  <div class="d-flex flex-column min-vh-100">
-    <%= render 'shared/navbar' %>
-    <div class="flex-grow-1">
-    <%= yield %>
-    </div>
-    <%= render 'shared/flashes' %>
+    <div>
+      <%= render 'shared/navbar' %>
+      <div>
+        <%= yield %>
+      </div>
+      <%= render 'shared/flashes' %>
+      <%= render 'shared/footer' %>
     </div>
   </body>
 </html>

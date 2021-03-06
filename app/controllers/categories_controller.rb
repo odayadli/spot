@@ -4,7 +4,6 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @service = Service.find(params[:service_id])
     @category = Category.new
   end
 
@@ -12,7 +11,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     # @category.services = Service.find(params[:service_id])
     if @category.save!
-      redirect_to service_categories_path
+      redirect_to services_path
     else
       render :new
     end

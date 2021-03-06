@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'omniauth-facebook'
+
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -9,6 +11,14 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  config.omniauth :facebook, ENV['FB_ID'], ENV['FB_SECRET'],
+                  # callback_url: 'http://localhost:3000/users/auth/facebook/callback',
+                  scope: 'email',
+                  info_fields: 'email,first_name,last_name',
+                  token_params: { parse: :json }
+
+  # image_size: 'square', # 50x50, guaranteed ratio
+  # secure_image_url: true
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -308,4 +318,5 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
 end
