@@ -1,66 +1,100 @@
-.background-image{
-   position: absolute;
-   top: 0;
-   left: 0;
-   height: 100vh;
-   width: 100vw;
-   object-fit: cover;
+// .container {
+//     margin-right: 0;
+//     margin-left: 0;
+//     padding-left: 0;
+// }
 
-}
+// .background{
+//    background: asset_url('bolt.jpg');
+//    position: relative;
+//    height: 100vh;
+//    width: 100vw;
+//    background-size: cover;
+// }
 
-h2{
-    text-align: center;
-    color:black;
-    font-family: 'Days One', sans-serif;
+// h2{
+//     text-align: center;
+//     color:black;
+//     font-family: 'Days One', sans-serif;
 
-}
+// }
 
-.card-login{
-    font-family: 'Opens-sans';
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: white;
-    width: 400px;
-    height: 500px;
-    margin-left: auto;
-    margin-right:auto;
-    margin-top: 195px;
-    justify-content: center;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
+// .login{
+//     font-family: 'Opens-sans';
+//     padding-left: 20px;
+//     padding-right: 20px;
+//     background-color: rgba(255, 255, 255, 0.8);
+//     color: white;
+//     width: 400px;
+//     height: 500px;
+//     margin-left: auto;
+//     margin-right:auto;
+//     justify-content: center;
+//     border-top-left-radius: 20px;
+//     border-top-right-radius: 20px;
+// }
 
-.form-inputs{
-    border-radius: 20px;
-    color:black; 
+// .form-inputs{
+//     border-radius: 20px;
+//     color:black; 
     
+// }
+
+// .form-actions{
+//     color:black;
+//     margin-top: 45px;
+// }
+
+// a{
+//     color: black;
+// }
+
+
+// .btn{
+//     border-radius: 10px;
+//     color: white;    
+// }
+
+// .links{
+//     margin-bottom: 40px;
+// }
+
+// .login-checkbox{
+//     width: 0 !important;
+//     height: 0 !important;
+// }
+
+
+
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
 }
 
-.form-actions{
-    color:black;
-    margin-top: 45px;
+.background-login{
+    background: asset_url('bolt.jpg');
+    width: 100%;
+    height: 100vh;
 }
 
-a{
-    color: black;
-}
-
-
-.btn{
-    border-radius: 10px;
-    color: white;    
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Opens-sans';
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .links{
-    margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
-.login-checkbox{
-    width: 0 !important;
-    height: 0 !important;
+.btn:hover{
+  color: white;
 }
-
-
-
-
