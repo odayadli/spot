@@ -1,32 +1,50 @@
-<h1>This is the booking new page</h1>
+<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="booking-bg">
+							<div class="form-header">
+								<h1> Spotter: <%= @service.name %> </h1>
+                <h6> <b>Details:</b> <%= @service.details %> </h6>
+                <h6> <b>£ Hourly Rate:</b> <%= @service.price_per_hour %> </h6>
+							</div>
+						</div>
 
 
+						<form>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group ">
+              
+										<%= simple_form_for [@service, @booking] do |f| %>
+                    
+                    <%= f.input :start_date, as: :datetime, required: false, input_html: {class: "datetimepicker"} %>
+                    
+                   
+									</div>
+								</div>
 
-<div class= "container">
-  <div class="justify-content-center">
-    <h2>Do you want to book this trainer: <%= @service.name %> </h2>
-    <h3> Details: <%= @service.details %> </h3>
-    <h3> Price: <%= @service.price_per_hour %> </h3>
-    <h3> Spotter: <%= @service.name %> </h3>
-  </div>
-</div>
 
-
-
-<h2>Select your dates (Add calender to page)</h2>
-
-<div class="calendar">
-  <div class="calendar__picture">
-    <h2>BOOKING REQUEST</h2>
-  </div>
-  <div >
-    <%= simple_form_for [@service, @booking] do |f| %>
-    <%= f.input :start_date, as: :datetime, required: false, input_html: {class: "datetimepicker"} %>
-    <%= f.input :end_date, as: :datetime, required: false, input_html: {class: "datetimepicker"} %>
-    <%= f.submit "Book it", class: "btn btn-secondary" %>
-  <% end %>
-
-  </div>
-</div>
+								<div class="col-md-12">
+									<div class="form-group">
+                 
+										 <%= f.input :end_date, as: :datetime, required: false, input_html: {class: "datetimepicker"} %>
+									</div>
+                  
+								</div>
+							</div>
+							
+							
+							<div class="form-btn">
+								<%= f.submit "Get Spotted", class: "btn btn-dark" %>
+                 <% end %>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
