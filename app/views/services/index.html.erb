@@ -5,7 +5,7 @@
     <% @services.each do |service| %>
 
       <div class='card'>
-        <%= service.trainer.email %>
+        <%= service.trainer.first_name %>
         <%= service.details %>
         <%= service.price_per_hour %>
         <%= service.service_address %>
