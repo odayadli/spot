@@ -1,9 +1,19 @@
-<%= @service.trainer.email %>
-<% if @service.trainer.profile_pic.attached? %>
-  <%= cl_image_tag @service.trainer.profile_pic, class: "card-image-index", height: 280, width: 322, crop: :fill %>
-<% else %>
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<% end %>
+
+<%# if @service.trainer.profile_pic.attached? %>
+  <%#= cl_image_tag @service.trainer.profile_pic, class: "card-image-index", height: 280, width: 322, crop: :fill %>
+<%# else %>
+
+  <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+<%# end %>
+
+<a href="<%= service_path(@service) %>">
+  <% if @service.photo.attached? %>
+    <%= cl_image_tag @service.photo.key, height: 280, width: 322, crop: :fill %>
+  <% else %>
+    <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
+  <% end %> </a>
+
+<%= @service.trainer.first_name%> <%= @service.trainer.last_name %>
 <p><%= @service.details %></p>
 <%= @service.price_per_hour %>
 <%= @service.category.name %>

@@ -1,23 +1,41 @@
 <div class='container'>
-  <h1>AVAILABLE SERVICES IN LONDON</h1>
-  <div class='cards'>
+  <h1>AVAILABLE TRAINERS</h1>
+  <div class='row justify-content-center'>
 
+    <div><%= form_with(url: services_path, method: :get, local: true) do |form| %>
+      <%= form.select :order, ["Price High to Low", "Price Low to High"] %>
+      <%#= select_tag 'service_id', options_for_select(@services.collect{ |u| [u.service_address] })%>
+      <%= form.submit "Sort" %>
+    <% end%></div>
     <% @services.each do |service| %>
 
-      <div class='card'>
-        <%= service.trainer.email %>
-        <%= service.details %>
-        <%= service.price_per_hour %>
-        <%= service.service_address %>
+      <div class='col-sm-12 col-md-4'>
+        <div class="card" style="margin-bottom: 30px; width: 360px;">
+          <div class="card-body">
+        <a href="<%= service_path(service) %>">
+          <% if service.photo.attached? %>
+            <%= cl_image_tag service.photo.key, height: 280, width: 322, crop: :fill %>
+          <% else %>
+            <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
+          <% end %> </a>
+       <div class="card-title"><strong><%= service.trainer.first_name %> <%= service.trainer.last_name %></strong></div>
+
+          <div class="card-text"> <%= service.details %></div>
+          <div class="card-text"> Price per hour: £<%= service.price_per_hour %></div>
+          <div class="card-text"> <%= service.category.name %></div>
+          <div class="card-text"> <%= service.service_address %></div>
+        </div>
+        </div>
       </div>
 
     <% end %>
 
   </div>
+  <div id="map"
+       style="width: 100%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>

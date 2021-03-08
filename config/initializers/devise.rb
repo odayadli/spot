@@ -11,11 +11,11 @@ require 'omniauth-facebook'
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  config.omniauth :facebook, ENV['FB_ID'], ENV['FB_SECRET'],
-                  # callback_url: 'http://localhost:3000/users/auth/facebook/callback',
-                  scope: 'email',
-                  info_fields: 'email,first_name,last_name',
-                  token_params: { parse: :json }
+  # config.omniauth :facebook, ENV['FB_ID'], ENV['FB_SECRET'],
+  #                 # callback_url: 'http://localhost:3000/users/auth/facebook/callback',
+  #                 scope: 'email',
+  #                 info_fields: 'email,first_name,last_name',
+  #                 token_params: { parse: :json }
 
   # image_size: 'square', # 50x50, guaranteed ratio
   # secure_image_url: true
