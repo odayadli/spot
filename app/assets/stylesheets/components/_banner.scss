@@ -1,5 +1,7 @@
-h3 {font-family: "Days One";}
-p {font-family: "Open Sans";}
+h3 {
+  font-family: "Days One", serif;}
+p {
+  font-family: "Open Sans", serif;}
 a {color: black;}
 a:hover {
   text-decoration: none;
@@ -26,7 +28,7 @@ a:hover {
 
 .banner-text h3 {font-size: 36px; font-family: "Days One"; margin-bottom: 33px;}
 // input {width: 271px; height: 43px; border-radius: 2px; border: none; padding-left: 12px;}
-.search-button {width: 117px; height: 43px; background-color: #ff1e1e; color: white; border: none; border-radius: 2px;}
+.search-button {width: 117px; height: 30px; background-color: #ff1e1e; color: white; border: none; border-radius: 2px;}
 .search-button:hover {background-color: rgba($color: #ff1e1e, $alpha: 0.8);}
 
 

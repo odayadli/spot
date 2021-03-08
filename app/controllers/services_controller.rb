@@ -6,8 +6,22 @@ class ServicesController < ApplicationController
                   Service.where('service_address ILIKE :search', search: "%#{params[:search]}%")
                 else
                   Service.all
+
                 end
 
+    @services = case params[:order]
+                when 'Price High to Low'
+                  Service.order(price_per_hour: :desc)
+                when 'Price Low to High'
+                  Service.order(price_per_hour: :asc)
+                else
+                  Service.all
+                end
+    # @services = if params[:service_id].present?
+    #               Service.where('service_address ILIKE :service_id', service_id: "%#{params[:service_id]}%")
+    #             else
+    #               Service.all
+    #             end
     @markers = @services.geocoded.map do |service|
       {
         lat: service.latitude,
@@ -25,8 +39,8 @@ class ServicesController < ApplicationController
   def show; end
 
   def new
-    @categories = Category.all
     @service = Service.new
+    @categories = Category.all
   end
 
   def create
@@ -54,7 +68,7 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:name, :details, :price_per_hour, :photo, :address, :indoor, :category_id, :search)
+    params.require(:service).permit(:name, :details, :price_per_hour, :photo, :service_address, :indoor, :category_id, :search)
   end
 
   def find_service
