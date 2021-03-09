@@ -1,15 +1,17 @@
 <div class='container'>
-  <h1>AVAILABLE TRAINERS</h1>
-  <div class='justify-content-center'>
-
-    <div class="mb-3">
-      <%= form_with(url: services_path, method: :get, local: true) do |form| %>
-        <%= form.select :order, ["Price High to Low", "Price Low to High"] %>
-        <%#= select_tag 'service_id', options_for_select(@services.collect{ |u| [u.service_address] })%>
-        <%= form.submit "Sort" %>
-      <% end%>
+     
+    <div class='justify-content-center'>
+    <div class="float" style="overflow: hidden; margin: 48px 0 16px;">
+      <h1 style="color: #333333; font-family:'Days One'; float: left; padding: 0;">AVAILABLE TRAINERS</h1>
+      <div class="mb-3" style="float:right; padding-top: 12px;">
+        <%= form_with(url: services_path, method: :get, local: true) do |form| %>
+          <%= form.select :order, ["Price High to Low", "Price Low to High"] %>
+          <%#= select_tag 'service_id', options_for_select(@services.collect{ |u| [u.service_address] })%>
+          <%= form.submit "Sort" %>
+        <% end%>
+      </div>
     </div>
-
+  
     <div class="cards-services">
 
       <% @services.each do |service| %>
