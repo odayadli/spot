@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.booking = @booking
     @review.user = current_user
     @review.save
-    redirect_to booking_path(@booking)
+    redirect_to service_path(@booking.service_id)
   end
 
 
