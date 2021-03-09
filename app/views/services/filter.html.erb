@@ -2,11 +2,11 @@
   <h1>AVAILABLE TRAINERS</h1>
   <div class='row justify-content-center'>
 
-    <div><%= form_with(url: services_path, method: :get, local: true) do |form| %>
-        <%#= form.select :order, ["Price High to Low", "Price Low to High"] %>
-        <%= select_tag 'service_id', options_for_select(@services.collect{ |u| [u.service_address] })%>
+    <div><%= form_with(url: services_filter_path, method: :get, local: true) do |form| %>
+        <%= form.select :order, ["Price High to Low", "Price Low to High"] %>
+        <%#= select_tag 'service_id', options_for_select(@services.collect{ |u| [u.service_address] })%>
         <%= form.submit "Sort" %>
-      <% end %></div>
+      <% end%></div>
     <% @services.each do |service| %>
 
       <div class='col-sm-12 col-md-4'>
@@ -18,8 +18,7 @@
               <% else %>
                 <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
               <% end %> </a>
-            <div class="card-title"><strong><%= service.trainer.first_name %> <%= service.trainer.last_name %></strong>
-            </div>
+            <div class="card-title"><strong><%= service.trainer.first_name %> <%= service.trainer.last_name %></strong></div>
 
             <div class="card-text"> <%= service.details %></div>
             <div class="card-text"> Price per hour: £<%= service.price_per_hour %></div>
