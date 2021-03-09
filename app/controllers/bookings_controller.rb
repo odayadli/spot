@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
   def new
     @service = Service.find(params[:service_id])
     @booking = Booking.new
+  
   end
 
   def create
@@ -31,7 +32,6 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.service = Service.find(@booking.service_id)
-
     if @booking.update!(booking_params)
       redirect_to service_path
     else
@@ -59,6 +59,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:service_id, :user_id, :status, :start_date, :end_date, :approved)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end

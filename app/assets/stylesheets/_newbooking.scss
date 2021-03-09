@@ -1,7 +1,20 @@
+.rope-img{
+	background: asset_url('dumbell.jpg');
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+	opacity: 0.9;
+	position: absolute;
+}
+
+
 .section {
 	position: relative;
 	height: 100vh;
 }
+
 
 .section .section-center {
 	position: absolute;
@@ -12,15 +25,8 @@
 	transform: translateY(-50%);
 }
 
-#booking {
-	// font-family: 'Alice', serif;
-	background: rgba(133, 104, 73, 0.33);
-}
-
 .booking-form {
 	position: relative;
-	// width: 100%;
-	// margin: auto;
 	background: #fff;
 	border-radius: 6px;
 	-webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.1);
@@ -33,8 +39,6 @@
 	bottom: -25px;
 	width: 28em;
     height: 31em;
-	// background-size: cover;
-	// background-position: center;
 	padding: 25px;
 	border-radius: 6px;
 	-webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.1);
@@ -52,7 +56,7 @@
 	background: rgba(0, 0, 0, 0.9);
 }
 
-.booking-form>form {
+.booking-form .form-booking-style {
     margin-left: auto;
     margin-right: auto;
     width: 63em;
@@ -168,12 +172,13 @@
 	margin-top: 30px;
 }
 
-h1{
+.text1{
     color: white;
     padding-top: 30px;
+	text-align: center;
 }
 
-h6{
+.text2{
     text-align: left;
     padding-top: 20px;
     color: white;

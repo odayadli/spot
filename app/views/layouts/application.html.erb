@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+ 
     <link href="https://fonts.googleapis.com/css?family=Days+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Spot | Find your Inner self</title>
@@ -17,13 +18,16 @@
   </head>
     
   <body>
-    <div>
+   <%# <div class="page-container"> %>
+    
       <%= render 'shared/navbar' %>
-      <div>
+      
         <%= yield %>
-      </div>
+     
       <%= render 'shared/flashes' %>
-      <%= render 'shared/footer' %>
-    </div>
+      <%#= render 'shared/footer' %>
+
+    <%# </div> %>
+  
   </body>
 </html>
