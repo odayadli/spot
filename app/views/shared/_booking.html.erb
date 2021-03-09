@@ -2,7 +2,6 @@
   <div>
     <div>
       <% if booking.start_date > DateTime.now %>
-
         <div>
           <% if booking.service.photo.attached? %>
             <%= cl_image_tag booking.service.photo.key, height: 280, width: 312, crop: :fill %>
@@ -24,9 +23,24 @@
           </div>
         </div>
       <% end %>
+      <% if booking.start_date < DateTime.now %>
+        <div>
+          <% if booking.service.photo.attached? %>
+            <%= cl_image_tag booking.service.photo.key, height: 280, width: 312, crop: :fill %>
+          <% else %>
+            <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
+          <% end %>
+          <div>
+            <h2><%= booking.service.trainer.first_name %> has been booked for <strong><%=((booking.end_date).to_time - (booking.start_date).to_time) / 3_600%></strong> hours</h2>
+            <h4><strong><%= booking.status ? 'confirmed' : 'pending confirmation' %></strong></h4>
+            <h3>Total price for <%= ((booking.end_date).to_time - (booking.start_date).to_time) / 3_600 %> hours is: <strong>£<%= booking.service.price_per_hour.to_i * ((booking.end_date).to_time - (booking.start_date).to_time)/ 3_600 %></strong></h3>
+            <p><%= booking.start_date %> - <%= booking.end_date %></p>
+            <%= link_to "Add review", new_booking_review_path(booking) %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-
 </div>
 
 

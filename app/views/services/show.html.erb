@@ -17,7 +17,8 @@
 
   <%= @service.service_address %>
   <h4> <%= @service.indoor ? 'Indoor service' : 'Outdoor service' %></h4>
-  <%=  link_to "add a category", new_category_path, class: 'btn btn-warning' %>
+  <%= link_to "Book this now", new_service_booking_path(@service), class: 'btn btn-secondary' %>
+  <%= link_to "add a category", new_category_path, class: 'btn btn-warning' %>
   <%= link_to 'delete service',
               service_path(@service),
               method: :delete,
@@ -26,7 +27,7 @@
 
 
   <ul class="list-group">
-    <% @booking.reviews.each do |review| %>
+    <% @service.bookings.each do |booking| %>
       <li class="list-group-item">
         <div class="d-flex justify-content-start align-items-center">
           <% if current_user.profile_pic.attached? %>
@@ -35,13 +36,14 @@
             <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
           <% end %>
           <div>
+            <% booking.reviews.each do |review| %>
             <% review.rating.times do %>
-              <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <p><%= review.description %></p>
+              <% end %>
             <% end %>
-            <p><%= review.description %></p>
+            </div>
           </div>
-        </div>
-      </li>
-    <% end %>
+        </li>
   </ul>
-</div>
