@@ -1,8 +1,29 @@
-<h1>This is the booking show page</h1>
-
-
-<h1>Booking confirmation for <%= @booking.service.trainer.first_name %></h1>
+<div class="container">
+<h1>Booking confirmation for: <%= @booking.service.trainer.first_name %></h1>
 <div>
 
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Add a new review', new_booking_review_path(@booking) %>
+
+  <ul class="list-group">
+    <% @booking.reviews.each do |review| %>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-start align-items-center">
+          <% if current_user.profile_pic.attached? %>
+            <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3"  %>
+          <% else %>
+            <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
+          <% end %>
+          <div>
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <p><%= review.description %></p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
+
 
