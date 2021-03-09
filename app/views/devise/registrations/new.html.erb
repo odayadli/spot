@@ -40,9 +40,7 @@
               <%= f.label :profile_pic, 'Upload your profile picture:' %>
 
               <%= f.file_field :profile_pic, direct_upload: true %>
-              <div>     
-              Are you a trainer? <%= f.input_field :trainer, as: :boolean, checked_value: true, unchecked_value: false%>
-              </div>
+              
               
               <%= f.input :password,
                           required: true,
@@ -53,6 +51,9 @@
                           required: true,
                           input_html: { autocomplete: "new-password" },
                           label_html: { class: 'text-class' } %> 
+                          <div>     
+              Are you a trainer? <%= f.input_field :trainer, as: :boolean, checked_value: true, unchecked_value: false%>
+              </div>
                         
             </div>
 

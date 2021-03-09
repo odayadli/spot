@@ -16,6 +16,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { initAutocomplete } from '../components/init_autocomplete';
 import { initAutocomplete_2 } from '../components/init_autocomplete';

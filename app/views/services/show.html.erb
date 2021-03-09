@@ -1,22 +1,30 @@
-<%= @service.trainer.email %>
-<% if @service.trainer.profile_pic.attached? %>
-  <%= cl_image_tag @service.trainer.profile_pic, class: "card-image-index", height: 280, width: 322, crop: :fill %>
-<% else %>
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<% end %>
-<p><%= @service.details %></p>
-<%= @service.price_per_hour %>
-<%= @service.category.name %>
+
+<div class="container">
+  <div class="card">
+    <a href="<%= service_path(@service) %>">
+      <% if @service.photo.attached? %>
+        <%= cl_image_tag @service.photo.key, height: 280, width: 322, crop: :fill %>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
+      <% end %> </a>
+
+    <%= @service.trainer.first_name%> <%= @service.trainer.last_name %>
+    <p><%= @service.details %></p>
+    <%= @service.price_per_hour %>
+    <%= @service.category.name %>
+
+  </div>
+
+  <%= @service.service_address %>
+  <h4> <%= @service.indoor ? 'Indoor service' : 'Outdoor service' %></h4>
+  <%=  link_to "add a category", new_category_path, class: 'btn btn-warning' %>
+  <%= link_to 'delete service',
+              service_path(@service),
+              method: :delete,
+              data: { confirm: "Please press ok if you want to delete your service or cancel to go back to your service" }, class: 'btn btn-primary' %>
+</div>
 
 
-<%= @service.service_address %>
-<h4> <%= @service.indoor ? 'Indoor service' : 'Outdoor service' %></h4>
-<%=  link_to "add a category", new_category_path%>
-<%= link_to 'delete service',
-            service_path(@service),
-            method: :delete,
-            data: { confirm: "Please press ok if you want to delete your service or cancel to go back to your service" } %>
-<div>
   <ul class="list-group">
     <% @booking.reviews.each do |review| %>
       <li class="list-group-item">

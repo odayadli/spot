@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+ 
     <link href="https://fonts.googleapis.com/css?family=Days+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <title>Spot</title>
+    <title>Spot | Find your Inner self</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Global Fitness & Wellness Service">
+    <meta property="og:description" content="Spot offers differnet fitness programs for individuals or groups.">
+    <meta property="og:image" content="https://res.cloudinary.com/dhj0qswpc/image/upload/v1615307262/anastase-maragos-9dzwzqwzmde-u_1_llixdm.jpg">
+    <meta property="og:url" content="https://www.spot-476.com/">
     <%= favicon_link_tag asset_path('favicon.ico') %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,13 +27,16 @@
   </head>
 
   <body>
-    <div>
+   <%# <div class="page-container"> %>
+    
       <%= render 'shared/navbar' %>
-      <div>
+      
         <%= yield %>
-      </div>
+     
       <%= render 'shared/flashes' %>
-      <%= render 'shared/footer' %>
-    </div>
+      <%#= render 'shared/footer' %>
+
+    <%# </div> %>
+  
   </body>
 </html>

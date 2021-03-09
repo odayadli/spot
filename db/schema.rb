@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_164035) do
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.text "details"
-    t.string "price_per_hour", null: false
+    t.string "price_per_hour"
     t.string "service_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_164035) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "trainer"
+    t.boolean "trainer", default: false
     t.string "provider"
     t.string "uid"
     t.string "facebook_picture_url"

@@ -9,9 +9,10 @@
 @import "font-awesome";
 @import 'select2/dist/css/select2';
 @import "flatpickr/dist/flatpickr";
-
+//*= require bootstrap-datepicker
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "sign_up";
 @import "login";
+@import "newbooking";

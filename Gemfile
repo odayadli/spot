@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
-
+gem 'bootstrap-datepicker-rails'
 gem 'pg'
 gem 'devise'
 gem 'cloudinary', '~> 1.16.0'

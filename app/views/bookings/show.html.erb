@@ -1,7 +1,6 @@
-
-
 <div class="container">
 <h1>Booking confirmation for: <%= @booking.service.trainer.first_name %></h1>
+<div>
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Add a new review', new_booking_review_path(@booking) %>
