@@ -8,20 +8,10 @@ class ServicesController < ApplicationController
                   Service.all
 
                 end
+    unless params[:service_address].blank?
+      @service = Service.select { |v| v.service_address == params[:service_address] }
+    end
 
-    @services = case params[:order]
-                when 'Price High to Low'
-                  Service.order(price_per_hour: :desc)
-                when 'Price Low to High'
-                  Service.order(price_per_hour: :asc)
-                else
-                  Service.all
-                end
-    # @services = if params[:service_id].present?
-    #               Service.where('service_address ILIKE :service_id', service_id: "%#{params[:service_id]}%")
-    #             else
-    #               Service.all
-    #             end
     @markers = @services.geocoded.map do |service|
       {
         lat: service.latitude,
@@ -30,6 +20,17 @@ class ServicesController < ApplicationController
         image_url: helpers.asset_url('service.jpg')
       }
     end
+  end
+
+  def filter
+    @services = case params[:order]
+                when 'Price High to Low'
+                  Service.order(price_per_hour: :desc)
+                when 'Price Low to High'
+                  Service.order(price_per_hour: :asc)
+                else
+                  Service.all
+                end
   end
 
   def my_services

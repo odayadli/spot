@@ -1,11 +1,4 @@
 
-<%# if @service.trainer.profile_pic.attached? %>
-  <%#= cl_image_tag @service.trainer.profile_pic, class: "card-image-index", height: 280, width: 322, crop: :fill %>
-<%# else %>
-
-  <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<%# end %>
-
 <div class="container">
   <div class="card">
     <a href="<%= service_path(@service) %>">

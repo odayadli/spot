@@ -9,15 +9,15 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @service = Service.find(params[:service_id])
     @booking = Booking.new
-  
+    @service = Service.find(params[:service_id])
+
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.service = Service.find(params[:service_id])
-    @booking.user = current_user
+    @booking.trainee = current_user
     if @booking.save!
       redirect_to booking_path(@booking)
     else
@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.service = Service.find(@booking.service_id)
     if @booking.update!(booking_params)
-      redirect_to service_path
+      redirect_to service_path(@booking)
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class BookingsController < ApplicationController
   end
 
   def bookings_requests
-    @bookings_requested = Booking.select { |booking| booking.service.owner == current_user }
+    @bookings_requested = Booking.select { |booking| booking.service.trainer == current_user }
   end
 
   def destroy

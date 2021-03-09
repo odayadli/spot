@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_one_attached :profile_pic
   has_many :services, dependent: :destroy, inverse_of: 'trainer'
-  has_many :bookings, dependent: :destroy
+  has_many :bookings, dependent: :destroy, inverse_of: 'trainee'
 
   # def self.from_omniauth(auth)
   #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
