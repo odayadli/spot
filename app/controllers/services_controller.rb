@@ -37,7 +37,15 @@ class ServicesController < ApplicationController
     @services = current_user.services
   end
 
-  def show; end
+  def show
+    @marker =
+      [{
+        lat: @service.latitude,
+        lng: @service.longitude,
+        infoWindow: render_to_string(partial: 'info_window', locals: { service: @service }),
+        image_url: helpers.asset_url('service.jpg')
+      }]
+  end
 
   def new
     @service = Service.new
