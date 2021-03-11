@@ -228,7 +228,7 @@ service5.save!
 puts user7
 file = URI.open('https://images.unsplash.com/photo-1609899494145-417d7327ea9e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80.jpg')
 service6 = Service.new(trainer: user7,
-                       category: category7,
+                       category: category4,
                        details: 'Come and join me!',
                        price_per_hour: '10',
                        service_address: 'London, England, United Kingdom')
