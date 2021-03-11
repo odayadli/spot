@@ -55,9 +55,9 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr()
   initAutocomplete_2()
   initMapbox()
-   $(function() {
-      $('#rating').barrating({
-        theme: 'fontawesome-stars'
-      });
-   });
+   // $(function() {
+   //    $('#rating').barrating({
+   //      theme: 'fontawesome-stars'
+   //    });
+   // });
 });
