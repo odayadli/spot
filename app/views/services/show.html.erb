@@ -1,18 +1,19 @@
+
 <div class="container">
   <div class="card">
     <div>
-      <a href="<%= service_path(@service) %>">
-        <% if @service.photo.attached? %>
-          <%= cl_image_tag @service.photo.key, height: 280, width: 322, crop: :fill %>
-        <% else %>
-          <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
-        <% end %> </a>
-      <div id="map" style="width: 322px; height: 280px; margin: 0 0 20px 0; display: inline-block"
-           data-markers="<%= @marker.to_json %>"
-           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+    <a href="<%= service_path(@service) %>">
+      <% if @service.photo.attached? %>
+        <%= cl_image_tag @service.photo.key, height: 280, width: 322, crop: :fill %>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
+      <% end %> </a>
+    <div id="map" style="width: 322px; height: 280px; margin: 0 0 20px 0; display: inline-block"
+         data-markers="<%= @marker.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-    <%= @service.trainer.first_name %> <%= @service.trainer.last_name %>
+    </div>
+    <%= @service.trainer.first_name%> <%= @service.trainer.last_name %>
     <p><%= @service.details %></p>
     <%= @service.price_per_hour %>
     <%= @service.category.name %>
@@ -22,32 +23,28 @@
   <%= @service.service_address %>
   <h4> <%= @service.indoor ? 'Indoor service' : 'Outdoor service' %></h4>
   <%= link_to "Book this now", new_service_booking_path(@service), class: 'btn btn-secondary' %>
-  <%= link_to "add a category", new_category_path, class: 'btn btn-warning' %>
-  <%= link_to 'delete service',
-              service_path(@service),
-              method: :delete,
-              data: { confirm: "Please press ok if you want to delete your service or cancel to go back to your service" }, class: 'btn btn-primary' %>
 </div>
 
 
-<ul class="list-group">
-  <% @service.bookings.each do |booking| %>
-    <li class="list-group-item">
-      <div class="d-flex justify-content-start align-items-center">
-        <% if current_user.profile_pic.attached? %>
-          <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3" %>
-        <% else %>
-          <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
-        <% end %>
-        <div>
-          <% booking.reviews.each do |review| %>
-            <% review.rating.times do %>
-              <i class="fas fa-star"></i>
+  <ul class="list-group">
+    <% @service.bookings.each do |booking| %>
+      <li class="list-group-item">
+            <% booking.reviews.each do |review| %>
+          <div class="d-flex justify-content-start align-items-center">
+            <% if current_user.profile_pic.attached? %>
+              <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3"  %>
+            <% else %>
+              <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
             <% end %>
-            <p><%= review.description %></p>
-          <% end %>
-  <% end %>
-  </div>
-  </div>
-  </li>
-</ul>
+            <div>
+
+            <% review.rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <p><%= review.description %></p>
+              <% end %>
+            <% end %>
+            </div>
+          </div>
+        </li>
+  </ul>

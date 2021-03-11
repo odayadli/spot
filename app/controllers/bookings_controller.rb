@@ -41,8 +41,8 @@ class BookingsController < ApplicationController
 
   def my_bookings
     now = DateTime.now
-    @current_bookings = current_user.bookings.where("end_date > ?", now)
-    @old_bookings = current_user.bookings.where("end_date < ?", now)
+    @current_bookings = current_user.bookings.where('end_date > ?', now)
+    @old_bookings = current_user.bookings.where('end_date < ?', now)
   end
 
   def bookings_requests
