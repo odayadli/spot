@@ -1,14 +1,18 @@
-
 <div class="container">
   <div class="card">
-    <a href="<%= service_path(@service) %>">
-      <% if @service.photo.attached? %>
-        <%= cl_image_tag @service.photo.key, height: 280, width: 322, crop: :fill %>
-      <% else %>
-        <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
-      <% end %> </a>
-
-    <%= @service.trainer.first_name%> <%= @service.trainer.last_name %>
+    <div>
+      <a href="<%= service_path(@service) %>">
+        <% if @service.photo.attached? %>
+          <%= cl_image_tag @service.photo.key, height: 280, width: 322, crop: :fill %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
+        <% end %> </a>
+      <div id="map" style="width: 322px; height: 280px; margin: 0 0 20px 0; display: inline-block"
+           data-markers="<%= @marker.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+    <%= @service.trainer.first_name %> <%= @service.trainer.last_name %>
     <p><%= @service.details %></p>
     <%= @service.price_per_hour %>
     <%= @service.category.name %>
@@ -26,24 +30,24 @@
 </div>
 
 
-  <ul class="list-group">
-    <% @service.bookings.each do |booking| %>
-      <li class="list-group-item">
-        <div class="d-flex justify-content-start align-items-center">
-          <% if current_user.profile_pic.attached? %>
-            <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3"  %>
-          <% else %>
-            <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
-          <% end %>
-          <div>
-            <% booking.reviews.each do |review| %>
+<ul class="list-group">
+  <% @service.bookings.each do |booking| %>
+    <li class="list-group-item">
+      <div class="d-flex justify-content-start align-items-center">
+        <% if current_user.profile_pic.attached? %>
+          <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3" %>
+        <% else %>
+          <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
+        <% end %>
+        <div>
+          <% booking.reviews.each do |review| %>
             <% review.rating.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-              <p><%= review.description %></p>
-              <% end %>
+              <i class="fas fa-star"></i>
             <% end %>
-            </div>
-          </div>
-        </li>
-  </ul>
+            <p><%= review.description %></p>
+          <% end %>
+  <% end %>
+  </div>
+  </div>
+  </li>
+</ul>
