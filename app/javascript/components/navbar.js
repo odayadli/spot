@@ -3,6 +3,7 @@ const initUpdateNavbarOnScroll = () => {
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= window.innerHeight) {
+        debugger
         navbar.classList.add('navbar-lewagon-black');
       } else {
         navbar.classList.remove('navbar-lewagon-black');

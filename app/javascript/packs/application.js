@@ -23,29 +23,7 @@ import { initAutocomplete_2 } from '../components/init_autocomplete';
 import { initSelect2 } from '../components/init_select';
 import { initFlatpickr } from "../components/flatpickr";
 import { initMapbox } from '../components/init_mapbox';
-//
-// const pageX = $(document).width();
-// const pageY = $(document).height();
-// let mouseY = 0;
-// let mouseX = 0;
-//
-// $(document).mousemove(function (event) {
-//   //verticalAxis
-//   mouseY = event.pageY;
-//   yAxis = ((pageY / 2 - mouseY) / pageY) * 300;
-//   //horizontalAxis
-//   mouseX = event.pageX / -pageX;
-//   xAxis = -mouseX * 100 - 100;
-//
-//   $(".box__ghost-eyes").css({
-//     transform: "translate(" + xAxis + "%,-" + yAxis + "%)"
-//   });
-//
-//   console.log('X: ' + xAxis);
-// });
-//
-
-
+import { initReviewButton, initReviewStar } from '../components/review-button';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
@@ -55,9 +33,11 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr()
   initAutocomplete_2()
   initMapbox()
-   // $(function() {
-   //    $('#rating').barrating({
-   //      theme: 'fontawesome-stars'
-   //    });
-   // });
+  initReviewStar()
+  initReviewButton()
+   $(function() {
+      $('#rating').barrating({
+        theme: 'fontawesome-stars'
+      });
+   });
 });
