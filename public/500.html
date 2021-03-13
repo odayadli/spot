@@ -4,63 +4,676 @@
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    :root {
+      --color-background: #BEEB9F;
+      --color-bug: #00A388;
+      --color-text: #00A388;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      background: var(--color-background);
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .error-code {
+      display: flex;
+      grid-gap: 4vw;
+      position: relative;
+      border: 0;
+      background: none;
+      font-family: "Nunito", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+      padding: 4vw;
+      border-radius: 1vw;
+      transition: all 250ms ease;
+    }
+    .error-code:after {
+      content: "Looks like you found a bug.";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4vw;
+      color: var(--color-text);
+      opacity: 0;
+      transition: all 500ms ease;
+      transition-delay: 1000ms;
+    }
+    .error-code:hover:after {
+      opacity: 1;
+    }
+    .error-code:hover .cell.filled:nth-child(1) {
+      transform: rotate(15deg);
+    }
+    .error-code:hover .cell.filled:nth-child(2) {
+      transform: rotate(30deg);
+    }
+    .error-code:hover .cell.filled:nth-child(3) {
+      transform: rotate(45deg);
+    }
+    .error-code:hover .cell.filled:nth-child(4) {
+      transform: rotate(60deg);
+    }
+    .error-code:hover .cell.filled:nth-child(5) {
+      transform: rotate(75deg);
+    }
+    .error-code:hover .cell.filled:nth-child(6) {
+      transform: rotate(90deg);
+    }
+    .error-code:hover .cell.filled:nth-child(7) {
+      transform: rotate(105deg);
+    }
+    .error-code:hover .cell.filled:nth-child(8) {
+      transform: rotate(120deg);
+    }
+    .error-code:hover .cell.filled:nth-child(9) {
+      transform: rotate(135deg);
+    }
+    .error-code:hover .cell.filled:nth-child(10) {
+      transform: rotate(150deg);
+    }
+    .error-code:hover .cell.filled:nth-child(11) {
+      transform: rotate(165deg);
+    }
+    .error-code:hover .cell.filled:nth-child(12) {
+      transform: rotate(180deg);
+    }
+    .error-code:hover .cell.filled:nth-child(13) {
+      transform: rotate(195deg);
+    }
+    .error-code:hover .cell.filled:nth-child(14) {
+      transform: rotate(210deg);
+    }
+    .error-code:hover .cell.filled:nth-child(15) {
+      transform: rotate(225deg);
+    }
+    .error-code:hover .cell.filled:nth-child(16) {
+      transform: rotate(240deg);
+    }
+    .error-code:hover .cell.filled:nth-child(17) {
+      transform: rotate(255deg);
+    }
+    .error-code:hover .cell.filled:nth-child(18) {
+      transform: rotate(270deg);
+    }
+    .error-code:hover .cell.filled:nth-child(19) {
+      transform: rotate(285deg);
+    }
+    .error-code:hover .cell.filled:nth-child(20) {
+      transform: rotate(300deg);
+    }
+    .error-code:hover .cell.filled:nth-child(21) {
+      transform: rotate(315deg);
+    }
+    .error-code:hover .cell.filled:nth-child(22) {
+      transform: rotate(330deg);
+    }
+    .error-code:hover .cell.filled:nth-child(23) {
+      transform: rotate(345deg);
+    }
+    .error-code:hover .cell.filled:nth-child(24) {
+      transform: rotate(360deg);
+    }
+    .error-code:hover .number {
+      grid-gap: 2vw;
+    }
+    .error-code:hover .bug {
+      transform: translateY(-200vh);
+      transition-delay: 500ms;
+    }
+    .error-code:hover .bug:before {
+      top: -0.5vw;
+    }
+    .error-code:hover .bug:after {
+      left: -0.75vw;
+      right: -0.75vw;
+      height: 1.5vw;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    .number {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      transition: all 500ms ease;
+      grid-gap: 0.25vw;
+      margin: auto 2vw;
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .cell.filled {
+      transition: all 500ms ease;
+    }
+
+    .bug {
+      background: var(--color-bug);
+      transition: transform 4000ms ease;
+      width: 2.25vw;
+      height: 2.5vw;
+      position: relative;
+      border-radius: 100%;
+      transition-delay: 0;
+    }
+    .bug:before {
+      content: "";
+      height: 1.5vw;
+      width: 1.5vw;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0.375vw;
+      background: var(--color-bug);
+      border-radius: 100%;
+      z-index: -1;
+      transition: all 1000ms ease;
+    }
+    .bug:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0.5vw;
+      right: 0.5vw;
+      bottom: 0.5vw;
+      height: 0;
+      transition: all 250ms ease;
+      animation: infinite skitter 100ms ease;
+      background: top left/100% 100% linear-gradient(transparent, transparent 45%, var(--color-bug) 45%, var(--color-bug) 55%, transparent 55%), top left/100% 100% linear-gradient(to bottom right, transparent, transparent 45%, var(--color-bug) 45%, var(--color-bug) 55%, transparent 55%), top left/100% 100% linear-gradient(to bottom left, transparent, transparent 45%, var(--color-bug) 45%, var(--color-bug) 55%, transparent 55%);
+    }
+
+    @keyframes skitter {
+      0%, 100% {
+        transform: rotate(-35deg);
+      }
+      50% {
+        transform: rotate(35deg);
+      }
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu);
+    html,
+    body {
+      background: #28254c;
+      font-family: "Ubuntu",serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .box {
+      width: 350px;
+      height: 100%;
+      max-height: 600px;
+      min-height: 450px;
+      background: #332f63;
+      border-radius: 20px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 30px 50px;
+    }
+    .box .box__ghost {
+      padding: 15px 25px 25px;
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translate(-50%, -30%);
+    }
+    .box .box__ghost .symbol:nth-child(1) {
+      opacity: 0.2;
+      animation: shine 4s ease-in-out 3s infinite;
+    }
+    .box .box__ghost .symbol:nth-child(1):before, .box .box__ghost .symbol:nth-child(1):after {
+      content: "";
+      width: 12px;
+      height: 4px;
+      background: #fff;
+      position: absolute;
+      border-radius: 5px;
+      bottom: 65px;
+      left: 0;
+    }
+    .box .box__ghost .symbol:nth-child(1):before {
+      transform: rotate(45deg);
+    }
+    .box .box__ghost .symbol:nth-child(1):after {
+      transform: rotate(-45deg);
+    }
+    .box .box__ghost .symbol:nth-child(2) {
+      position: absolute;
+      left: -5px;
+      top: 30px;
+      height: 18px;
+      width: 18px;
+      border: 4px solid;
+      border-radius: 50%;
+      border-color: #fff;
+      opacity: 0.2;
+      animation: shine 4s ease-in-out 1.3s infinite;
+    }
+    .box .box__ghost .symbol:nth-child(3) {
+      opacity: 0.2;
+      animation: shine 3s ease-in-out 0.5s infinite;
+    }
+    .box .box__ghost .symbol:nth-child(3):before, .box .box__ghost .symbol:nth-child(3):after {
+      content: "";
+      width: 12px;
+      height: 4px;
+      background: #fff;
+      position: absolute;
+      border-radius: 5px;
+      top: 5px;
+      left: 40px;
+    }
+    .box .box__ghost .symbol:nth-child(3):before {
+      transform: rotate(90deg);
+    }
+    .box .box__ghost .symbol:nth-child(3):after {
+      transform: rotate(180deg);
+    }
+    .box .box__ghost .symbol:nth-child(4) {
+      opacity: 0.2;
+      animation: shine 6s ease-in-out 1.6s infinite;
+    }
+    .box .box__ghost .symbol:nth-child(4):before, .box .box__ghost .symbol:nth-child(4):after {
+      content: "";
+      width: 15px;
+      height: 4px;
+      background: #fff;
+      position: absolute;
+      border-radius: 5px;
+      top: 10px;
+      right: 30px;
+    }
+    .box .box__ghost .symbol:nth-child(4):before {
+      transform: rotate(45deg);
+    }
+    .box .box__ghost .symbol:nth-child(4):after {
+      transform: rotate(-45deg);
+    }
+    .box .box__ghost .symbol:nth-child(5) {
+      position: absolute;
+      right: 5px;
+      top: 40px;
+      height: 12px;
+      width: 12px;
+      border: 3px solid;
+      border-radius: 50%;
+      border-color: #fff;
+      opacity: 0.2;
+      animation: shine 1.7s ease-in-out 7s infinite;
+    }
+    .box .box__ghost .symbol:nth-child(6) {
+      opacity: 0.2;
+      animation: shine 2s ease-in-out 6s infinite;
+    }
+    .box .box__ghost .symbol:nth-child(6):before, .box .box__ghost .symbol:nth-child(6):after {
+      content: "";
+      width: 15px;
+      height: 4px;
+      background: #fff;
+      position: absolute;
+      border-radius: 5px;
+      bottom: 65px;
+      right: -5px;
+    }
+    .box .box__ghost .symbol:nth-child(6):before {
+      transform: rotate(90deg);
+    }
+    .box .box__ghost .symbol:nth-child(6):after {
+      transform: rotate(180deg);
+    }
+    .box .box__ghost .box__ghost-container {
+      background: #fff;
+      width: 100px;
+      height: 100px;
+      border-radius: 100px 100px 0 0;
+      position: relative;
+      margin: 0 auto;
+      animation: upndown 3s ease-in-out infinite;
+    }
+    .box .box__ghost .box__ghost-container .box__ghost-eyes {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      height: 12px;
+      width: 70px;
+    }
+    .box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-left {
+      width: 12px;
+      height: 12px;
+      background: #332f63;
+      border-radius: 50%;
+      margin: 0 10px;
+      position: absolute;
+      left: 0;
+    }
+    .box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-right {
+      width: 12px;
+      height: 12px;
+      background: #332f63;
+      border-radius: 50%;
+      margin: 0 10px;
+      position: absolute;
+      right: 0;
+    }
+    .box .box__ghost .box__ghost-container .box__ghost-bottom {
+      display: flex;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+    }
+    .box .box__ghost .box__ghost-container .box__ghost-bottom div {
+      flex-grow: 1;
+      position: relative;
+      top: -10px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: #fff;
+    }
+    .box .box__ghost .box__ghost-container .box__ghost-bottom div:nth-child(2n) {
+      top: -12px;
+      margin: 0 0px;
+      border-top: 15px solid #332f63;
+      background: transparent;
+    }
+    .box .box__ghost .box__ghost-shadow {
+      height: 20px;
+      box-shadow: 0 50px 15px 5px #3b3769;
+      border-radius: 50%;
+      margin: 0 auto;
+      animation: smallnbig 3s ease-in-out infinite;
+    }
+    .box .box__description {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .box .box__description .box__description-container {
+      color: #fff;
+      text-align: center;
+      width: 200px;
+      font-size: 16px;
+      margin: 0 auto;
+    }
+    .box .box__description .box__description-container .box__description-title {
+      font-size: 24px;
+      letter-spacing: 0.5px;
+    }
+    .box .box__description .box__description-container .box__description-text {
+      color: #8c8aa7;
+      line-height: 20px;
+      margin-top: 20px;
+    }
+    .box .box__description .box__button {
+      display: block;
+      position: relative;
+      background: #ff5e65;
+      border: 1px solid transparent;
+      border-radius: 50px;
+      height: 50px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      line-height: 50px;
+      font-size: 18px;
+      padding: 0 70px;
+      white-space: nowrap;
+      margin-top: 25px;
+      transition: background 0.5s ease;
+      overflow: hidden;
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+    }
+    .box .box__description .box__button:before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 100px;
+      background: #fff;
+      bottom: -25px;
+      left: 0;
+      border: 2px solid #fff;
+      transform: translateX(-50px) rotate(45deg);
+      transition: transform 0.5s ease;
+    }
+    .box .box__description .box__button:hover {
+      background: transparent;
+      border-color: #fff;
+    }
+    .box .box__description .box__button:hover:before {
+      transform: translateX(250px) rotate(45deg);
+    }
+
+    @keyframes upndown {
+      0% {
+        transform: translateY(5px);
+      }
+      50% {
+        transform: translateY(15px);
+      }
+      100% {
+        transform: translateY(5px);
+      }
+    }
+    @keyframes smallnbig {
+      0% {
+        width: 90px;
+      }
+      50% {
+        width: 100px;
+      }
+      100% {
+        width: 90px;
+      }
+    }
+    @keyframes shine {
+      0% {
+        opacity: 0.2;
+      }
+      25% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 0.2;
+      }
+      100% {
+        opacity: 0.2;
+      }
+    }
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body>
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+  <button class="error-code">
+    <div class="number five">
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+      <div class="cell empty"></div>
+      <div class="cell empty"></div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+
+      <div class="cell empty"></div>
+      <div class="cell empty"></div>
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+    <div class="number zero">
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+    </div>
+    <div class="number zero">
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+
+      <div class="cell empty"></div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell filled">
+        <div class="bug"></div>
+      </div>
+      <div class="cell empty"></div>
+    </div>
+  </button>
+  <a href="https://www.spot-476.com/" target="_blank" class="box__button">Go back</a>
+
 </body>
 </html>

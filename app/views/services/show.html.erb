@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="card">
     <a href="<%= service_path(@service) %>">
@@ -7,14 +6,11 @@
       <% else %>
         <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
       <% end %> </a>
-
     <%= @service.trainer.first_name%> <%= @service.trainer.last_name %>
     <p><%= @service.details %></p>
     <%= @service.price_per_hour %>
     <%= @service.category.name %>
-
   </div>
-
   <%= @service.service_address %>
   <h4> <%= @service.indoor ? 'Indoor service' : 'Outdoor service' %></h4>
   <%= link_to "Book this now", new_service_booking_path(@service), class: 'btn btn-secondary' %>
@@ -24,8 +20,6 @@
               method: :delete,
               data: { confirm: "Please press ok if you want to delete your service or cancel to go back to your service" }, class: 'btn btn-primary' %>
 </div>
-
-
   <ul class="list-group">
     <% @service.bookings.each do |booking| %>
       <li class="list-group-item">

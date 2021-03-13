@@ -11,17 +11,14 @@
               <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>`
             <% end %>
             <div>
-              <h2><%= booking.service.first_name %> has requested to book for
+              <h2><%= booking.service.trainer.first_name %> has requested to book for
                 <strong><%= ((booking.end_date).to_time - (booking.start_date).to_time) / 3_600 %></strong> hours</h2>
               <h4 id="status"><strong>  <%= booking.status ? 'confirmed' : 'pending confirmation' %></strong></h4>
               <%= simple_form_for booking do |f| %>
                 Confirm<%= f.input_field :status, as: :boolean, checked_value: true, unchecked_value: false %>
                 <%= f.button :submit %>
               <% end %>
-
-              <h3>Total price for <%= ((booking.end_date).to_time - (booking.start_date).to_time) / 3_600 %> hours is:
-                <strong>£<%= booking.service.price_per_hour * ((booking.end_date).to_time - (booking.start_date).to_time) / 3_600 %></strong>
-              </h3>
+              <h3>Total price for <%= ((booking.end_date).to_time - (booking.start_date).to_time) / 3_600 %> hours is: <strong>£<%= booking.service.price_per_hour.to_i * ((booking.end_date).to_time - (booking.start_date).to_time)/ 3_600 %></strong></h3>
               <p><%= booking.start_date %> - <%= booking.end_date %></p>
               <% if booking.start_date > DateTime.now %>
                 <%= link_to 'Decline booking',

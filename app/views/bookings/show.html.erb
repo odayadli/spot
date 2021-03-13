@@ -1,29 +1,32 @@
-<div class="container">
-<h1>Booking confirmation for: <%= @booking.service.trainer.first_name %></h1>
-<div>
+<div class="tennis-img">
+<div class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="booking-bg">
+							<div class="form-header">
+								<h1 class="spot">WELCOME TO SPOT</h1>
+                                <h4 class="spotter">Your Spotter <%= @booking.service.trainer.first_name %> will contact you soon to help you start a new chapter in your life.</h4>
 
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Add a new review', new_booking_review_path(@booking) %>
+							</div>
+						</div>
 
-  <ul class="list-group">
-    <% @booking.reviews.each do |review| %>
-      <li class="list-group-item">
-        <div class="d-flex justify-content-start align-items-center">
-          <% if current_user.profile_pic.attached? %>
-            <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3"  %>
-          <% else %>
-            <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
-          <% end %>
-          <div>
-            <% review.rating.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-            <p><%= review.description %></p>
-          </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+
+							<div class="form-booking-style">
+						
+							<div class="row">
+								<div class="col-md-12 showbooking">
+									<div class="form-group ">
+              
+										<h1>Booking Confirmed</h1>
+                                        <p>A confirmation as been sent to your e-mail</p>
+									</div>
+								</div>
+							</div>
+						    </div>
+					</div>
+				</div>
+			</div>
+		</div>
 </div>
-
-

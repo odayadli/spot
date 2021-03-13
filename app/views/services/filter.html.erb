@@ -10,7 +10,7 @@
     <% @services.each do |service| %>
 
       <div class='col-sm-12 col-md-4'>
-        <div class="card" style="margin-bottom: 30px; width: 360px;">
+        <div class="card" style="margin-bottom:-30px; width: 360px;">
           <div class="card-body">
             <a href="<%= service_path(service) %>">
               <% if service.photo.attached? %>
@@ -19,9 +19,8 @@
                 <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
               <% end %> </a>
             <div class="card-title"><strong><%= service.trainer.first_name %> <%= service.trainer.last_name %></strong></div>
-
-            <div class="card-text"> <%= service.details %></div>
             <div class="card-text"> Price per hour: £<%= service.price_per_hour %></div>
+            <div class="card-text"> <%= service.details %></div>
             <div class="card-text"> <%= service.category.name %></div>
             <div class="card-text"> <%= service.service_address %></div>
           </div>
