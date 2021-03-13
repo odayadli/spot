@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @service = Service.find(params[:service_id])
-
   end
 
   def create
