@@ -37,9 +37,11 @@
           <% end %>
           <div>
             <% booking.reviews.each do |review| %>
-            <% review.rating.times do %>
-                <i class="fas fa-star"></i>
+            <% if review.rating? %>
+              <% review.rating.times do %>
+                 <i class="fas fa-star"></i>
               <% end %>
+            <% end %>
               <p><%= review.description %></p>
               <% end %>
             <% end %>

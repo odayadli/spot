@@ -1,5 +1,5 @@
 <div class='container'>
-     
+
     <div class='justify-content-center'>
     <div class="float" style="overflow: hidden; margin: 48px 0 16px;">
       <h1 style="color: #333333; font-family:'Days One'; float: left; padding: 0;">AVAILABLE TRAINERS</h1>
@@ -11,9 +11,10 @@
         <% end%>
       </div>
     </div>
-  
+
     <div class="cards-services">
 
+<%# ADD RENDERING FROM _card component%>
       <% @services.each do |service| %>
 
         <div class="card" style="margin-bottom: 30px; width: 360px;">
@@ -23,7 +24,7 @@
                 <%= cl_image_tag service.photo.key, height: 280, width: 322, crop: :fill %>
               <% else %>
                 <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
-       
+
               <% end %>
             </a>
             <div class="card-title">

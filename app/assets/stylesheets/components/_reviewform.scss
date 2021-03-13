@@ -1,0 +1,86 @@
+
+#rating {
+    height: 1px;
+    padding: 0;
+}
+
+.review-button{
+text-align: center;
+}
+
+.button-wrapper {
+  width: 100%;
+  position: relative;
+  margin-top: 40px;
+}
+
+.button-animated {
+  background: #2B2D2F;
+  height: 80px;
+  width: 200px;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 4px;
+  position: absolute;
+}
+
+.text-animated {
+  color: #71DFBE;
+  font: bold 1.25rem/1 poppins;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-52%);
+  left: 0;
+  right: 0;
+}
+
+.progress-bar {
+  position: absolute;
+  height: 10px;
+  width: 0;
+  right: 0;
+  top: 50%;
+  left: 50%;
+  border-radius: 200px;
+  transform: translateY(-50%) translateX(-50%);
+  background: #505357;
+}
+
+svg {
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+  right: 0;
+}
+
+.check {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.fa-star {
+  color: yellow;
+  cursor: pointer;
+}
+
+.selected ~ .fa-star {
+  color: grey;
+}
+
+.fa-star.hidden {
+  display: none;
+}
