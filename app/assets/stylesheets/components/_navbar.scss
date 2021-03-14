@@ -3,12 +3,16 @@
   background-color: #F4F4F4;
   transition: 0.5s background-color ease;
   position: relative;
+  height: 80px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
+.logo{
+  border-radius: 21%;
+}
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
@@ -22,7 +26,9 @@
   overflow: hidden;
 }
 
-
+.profile-avatar{
+  width: 50px;
+}
 .nav-left {
   float: left;
 }
@@ -38,8 +44,22 @@
 
 
 .menu-wrap {
- line-height: 67px;
- margin-bottom: 0;
+  line-height: 50px;
+  margin-bottom: 0px;
+  border-bottom: 3px solid;
+  color: black;
+  box-shadow: 6px 5px 5px 1px;
+  text-align: center;
+  margin-right: 100px;
+}
+
+.logo-img{
+  width: 40px;
+}
+
+.logo-img2{
+  width: 115px;
+  margin-left: 8px;
 }
 
 .nav-logo, .menu-wrap {
@@ -53,6 +73,9 @@
 }
 
 .menu-wrap li:last-child{
-  margin-right: 0;
+  margin-right: 18px;
 }
 
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}

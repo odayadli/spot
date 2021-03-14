@@ -41,7 +41,7 @@ a:hover {
 .trainer_name {font-size: 24px; margin-top: 18px;}
 
 .city1, .city2, .city3, .city4, .city5, .city6 {width: 32%; float: left; margin-right: 2%; position: relative; margin-bottom: 16px;}
-.city1 img, .city2 img,.city3 img, .city4 img,.city5 img, .city6 img {width:100%;}
+.city1 img, .city2 img,.city3 img, .city4 img,.city5 img, .city6 img {width:100%; height: 310px}
 .cities_wrap {overflow: hidden;}
 .city3, .city6 {margin-right: 0;}
 .city-name {font-size: 24px;}
@@ -49,4 +49,7 @@ a:hover {
 
 .city-text {position: absolute; top: 16px; left: 21px; color: white;}
 
-
+#order {
+  width: 165px;
+  height: 30px;
+}
