@@ -15,7 +15,7 @@
       
       <div class="booking-product-infos">
         
-        <h2 class="booked"><%= booking.service.trainer.first_name %> has been booked for <strong><%=((booking.end_date).to_time - (booking.start_date).to_time) / 3_600%></strong> hours</h2>
+        <h2 class="booked"><%= booking.service.trainer.first_name %> has been booked for <%=((booking.end_date).to_time - (booking.start_date).to_time) / 3_600%> hours</h2>
         <p><%= booking.start_date.strftime("%A, %d %b %Y %l:%M %p") %> to <%= booking.end_date.strftime("%A, %d %b %Y %l:%M %p") %></p>
         <h3 class="price">Total price: £<%= booking.service.price_per_hour.to_i * ((booking.end_date).to_time - (booking.start_date).to_time)/ 3_600 %></h3>
         <h4 class="pending"><%= booking.status ? 'Confirmed' : 'Pending confirmation' %></h4>
@@ -41,41 +41,3 @@
           <% end %>
 </div>
 <div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container" style="margin-top: 110px">
-<h3><%= @current_bookings.count %> current booking<%= @current_bookings.count == 1 ? '' : 's' %></h3>
-  <div>
-    <div class="row justify-content-center">
-      <div class="col-8">
-        <% @current_bookings.each do |booking| %>
-          <%= render 'shared/booking', booking: booking, service: booking.service %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <h3>Previous bookings</h3>
-  <div>
-    <div class="row justify-content-center">
-      <div class="col-8">
-        <% @old_bookings.each do |booking| %>
-          <%= render 'shared/booking', booking: booking, service: booking.service %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
