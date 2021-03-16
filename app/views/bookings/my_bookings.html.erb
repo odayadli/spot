@@ -17,7 +17,7 @@
         
         <h2 class="booked"><%= booking.service.trainer.first_name %> has been booked for <%=((booking.end_date).to_time - (booking.start_date).to_time) / 3_600%> hours</h2>
         <p><%= booking.start_date.strftime("%A, %d %b %Y %l:%M %p") %> to <%= booking.end_date.strftime("%A, %d %b %Y %l:%M %p") %></p>
-        <h3 class="price">Total price: £<%= booking.service.price_per_hour.to_i * ((booking.end_date).to_time - (booking.start_date).to_time)/ 3_600 %></h3>
+        <h3 class="price"><b>Total price:</b> £<%= booking.service.price_per_hour.to_i * ((booking.end_date).to_time - (booking.start_date).to_time)/ 3_600 %></h3>
         <h4 class="pending"><%= booking.status ? 'Confirmed' : 'Pending confirmation' %></h4>
 
         <div class="cancel-edit">
