@@ -32,9 +32,7 @@
             <%= link_to "Edit my Booking", edit_booking_path(booking) %>
           </div>
             <% end %>
-             <% if booking.start_date < DateTime.now %>
-            <%= link_to "Add review", new_booking_review_path(booking) %>
-            <% end %>
+            
       </div>
       </div>
     </div>
