@@ -1,51 +1,51 @@
+<div class="home-banner text-center">
+  <div class="banner-image" style="background-color: #010101; url(); background-position: center; background-size: cover; height: 250px;">
+    <div class="banner-service">
+      <h3>BOOK YOUR SESSION NOW WITH <%=@service.trainer.first_name%></h3>
+    </div>
+  </div>
+</div>
 <div class="container">
-  <div class="card">
-    <a href="<%= service_path(@service) %>">
-      <% if @service.photo.attached? %>
-        <%= cl_image_tag @service.photo.key, height: 280, width: 322, crop: :fill %>
-      <% else %>
-        <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg", width: '320', height: '280' %>
-      <% end %> </a>
-    <%= @service.trainer.first_name%> <%= @service.trainer.last_name %>
-    <p><%= @service.details %></p>
-    <%= @service.price_per_hour %>
-    <%= @service.category.name %>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= render 'shared/card', service: @service %>
+    </div>
 
+  <div class="col-sm-6">
+    <div class="booked-times">
+      <div id="map" style="width: 600px; height: 600px; margin: 0 0 20px 0;"
+        data-markers="<%= @marker.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <% @bookings.each do |booking| %>
+       <p> <%= booking.start_date.strftime("%A, %d %b %Y %l:%M %p") %> - <%= booking.end_date.strftime("%l:%M %p") %> </p>
+      <% end %>
+    </div>
   </div>
-  <%= @service.service_address %>
-  <h4> <%= @service.indoor ? 'Indoor service' : 'Outdoor service' %></h4>
-  <%= link_to "Book this now", new_service_booking_path(@service), class: 'btn btn-secondary' %>
-
-   <%= @service.price_per_hour %>
-    <%= @service.service_address %>
-
-  </div>
-
-  <h4> <%= @service.indoor ? 'Indoor service' : 'Outdoor service' %></h4>
-
-
-
-
-  <ul class="list-group">
-    <% @service.bookings.each do |booking| %>
-      <li class="list-group-item">
-        <div class="d-flex justify-content-start align-items-center">
-          <% if current_user.profile_pic.attached? %>
-            <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3"  %>
-          <% else %>
-            <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
-          <% end %>
-          <div>
-            <% booking.reviews.each do |review| %>
-            <% if review.rating? %>
-              <% review.rating.times do %>
-                 <i class="fas fa-star"></i>
-              <% end %>
+   <%= link_to "Book this now", new_service_booking_path(@service), class: 'btn btn-secondary' %>
+    <ul class="list-group">
+      <% @service.bookings.each do |booking| %>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-start align-items-center">
+            <% if current_user.profile_pic.attached? %>
+              <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3"  %>
+            <% else %>
+              <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
             <% end %>
-              <p><%= review.description %></p>
+            <div>
+              <% booking.reviews.each do |review| %>
+                <% if review.rating? %>
+                  <% review.rating.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                <% end %>
+                <p><%= review.description %></p>
+                <% end %>
               <% end %>
-            <% end %>
             </div>
           </div>
         </li>
-  </ul>
+    </ul>
+  </div>
+</div>
+</div>
