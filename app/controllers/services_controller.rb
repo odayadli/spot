@@ -60,6 +60,7 @@ class ServicesController < ApplicationController
         infoWindow: render_to_string(partial: 'info_window', locals: { service: @service }),
         image_url: helpers.asset_url('service.jpg')
       }]
+    @bookings = @service.bookings.order(:start_date)
   end
 
   def new
