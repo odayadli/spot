@@ -4,6 +4,8 @@ class ServicesController < ApplicationController
   def index
     @services = if params[:search].present?
                   Service.where('service_address ILIKE :search', search: "%#{params[:search]}%")
+                elsif params[:tag].present?
+                  Service.where('service_address ILIKE :tag', tag: "%#{params[:tag]}%")
                 else
                   Service.all
 
@@ -28,6 +30,19 @@ class ServicesController < ApplicationController
                   Service.order(price_per_hour: :desc)
                 when 'Price Low to High'
                   Service.order(price_per_hour: :asc)
+                else
+                  Service.all
+                end
+
+    @services = case params[:search]
+                when '1km'
+                  Service.near('service_address', 1)
+                when '5km'
+                  Service.near('service_address', 5)
+                when '10km'
+                  Service.near('service_address', 10)
+                when '20km'
+                  Service.near('service_address', 20)
                 else
                   Service.all
                 end

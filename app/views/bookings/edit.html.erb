@@ -1,11 +1,42 @@
-<h1>This is the booking edit page</h1>
 
-<div class="container">
-  <h1>Edit your booking for <%= @booking.service.name %></h1>
-  <%= simple_form_for @booking do |f| %>
-    <%= f.label :date_of_tour %>
-    <%= f.input :start_date, as: :date, html5: true %>
-    <%= f.input :end_date, as: :date, html5: true %>
-    <%= f.submit "book", class: "btn btn-primary mt-2" %>
-  <% end %>
+<div class="sports-img">
 </div>
+<div class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="booking-bg">
+							<div class="form-header">
+								<h1 class="text1"> Change your booking </h1>
+								<p class="confirmation"> A confirmation e-mail will be sent to you once the Spotter accepts the changes </p>
+							</div>
+						</div>
+                <div class="whitebox">
+							<div class="form-booking-style">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group ">
+										  <%= simple_form_for [@service, @booking] do |f| %>
+                    					  <%= f.input :start_date, as: :datetime, required: false, input_html: {class: "datetimepicker"} %>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										  <%= f.input :end_date, as: :datetime, required: false, input_html: {class: "datetimepicker"} %>
+									</div>
+								</div>
+							</div>
+							<div class="form-btn">
+								<%= f.submit "Submit Changes", class: "btn btn-dark" %>
+                				<% end %>
+                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+

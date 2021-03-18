@@ -1,10 +1,38 @@
-<div class= "container">
-  <%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :description %>
-    <%= f.input :rating, collection: [1, 2, 3, 4, 5], label: false, input_html: {id:"rating"}%>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
-  <% end %>
+
+<div class="container">
+  <h1>How was your spot session with <%= @booking.service.trainer.first_name%></h1>
+
+  <div class="row">
+
+  <div class="col-sm-6">
+    <%= render 'shared/card', service: @booking.service %>
+  </div>
+
+
+  <div class="col-sm-6">
+    <%= simple_form_for [@booking, @review], id: "review-form" do |f| %>
+    <%= f.input :description, label: "Write a review here!" %>
+    <%= f.input :rating, label: "Give your spotter a rating!", input_html: {id:"rating", class: "hidden", value: ""}%>
+        <i class="fas fa-star hidden selected"></i>
+        <i class="fas fa-star" data-value="1"></i>
+        <i class="fas fa-star" data-value="2"></i>
+        <i class="fas fa-star" data-value="3"></i>
+        <i class="fas fa-star" data-value="4"></i>
+        <i class="fas fa-star" data-value="5"></i>
+    <div class= "button-wrapper">
+      <div class="button-animated">
+        <div class="text-animated">Submit</div>
+      </div>
+      <%= f.submit class: "hidden", id: "review-submit" %>
+      <div class="progress-bar"></div>
+        <svg x="0px" y="0px" viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;">
+          <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
+        </svg>
+    </div>
+    <% end %>
+  </div>
 </div>
 
+<link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
 
 

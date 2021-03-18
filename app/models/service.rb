@@ -8,4 +8,10 @@ class Service < ApplicationRecord
   has_one_attached :profile_pic
   has_one_attached :photo
   belongs_to :trainer, class_name: 'User', foreign_key: 'user_id'
+  include PgSearch::Model
+  pg_search_scope :search_by_service_address,
+                  against: [:service_address],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
