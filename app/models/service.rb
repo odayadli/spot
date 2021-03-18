@@ -14,5 +14,5 @@ class Service < ApplicationRecord
                   using: {
                     tsearch: { prefix: true }
                   }
-  searchkick
+  
 end
