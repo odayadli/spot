@@ -74,7 +74,8 @@ const clickStar = (e) => {
 
 document.querySelectorAll('.fa-star').forEach((star) => {
   star.addEventListener('click', clickStar)
-})
+});
 }
+
 
 export { initReviewButton, initReviewStar};
