@@ -2,7 +2,7 @@
   <div class="banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dhj0qswpc/image/upload/v1614374710/banner_photo_vtqti0.jpg'); background-position: center; background-size: cover">
   <div class="banner-text">
     <h3>Find a trainer.<br>Be a trainer.</h3>
-    <%= form_with(url: services_path, method: :get, local: true) do |f| %>
+    <%= form_with(url: services_filter_distance_path, method: :get, local: true) do |f| %>
       <%= text_field_tag :search, params[:search], placeholder: "e.g. SW8 2LP" %>
       <%= f.select :order, ["1km", "5km", "10km", "20km"], class: "distance" %>
       <%= submit_tag 'Search', class: 'search-button' %>
