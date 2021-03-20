@@ -1,5 +1,5 @@
-.rope-img{
-	background: asset_url('dumbell.jpg');
+.sports-img{
+	background: asset_url('sports.jpg');
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
@@ -26,7 +26,6 @@
 }
 
 .booking-form {
-	font-family: 'Days One';
 	position: relative;
 	background: #fff;
 	border-radius: 6px;
@@ -115,7 +114,6 @@
     text-align: left;
     padding-top: 20px;
     color: white;
-	font-size:1.8em;
 }
 
 .form-group {
@@ -127,7 +125,10 @@
     padding: 10px 20px;
 }
 
-
+.confirmation{
+	padding-top: 40px;
+	font-size: 1.4em;
+}
 
 
 

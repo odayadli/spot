@@ -46,19 +46,32 @@
   }
 
   .booking-product-infos{
-      padding-left:80px;
+      
       
   }
 
  .cancel-edit{
    text-align: end;
+   font-family: "Open Sans", serif;
  }
 
  .pending{
    padding-bottom: 20px;
    text-align: end;
+   font-size: 1em;
+   font-family: "Open Sans", serif;
+   text-align: inherit;
+   font-weight: bold;
  }
 
  .price{
-   text-align: end;
+  text-align: inherit;
+   font-size: 1.2em;
+   font-family: "Open Sans", serif;
+ }
+
+ .booked{
+  font-size: 2em;
+  text-align: inherit;
+  font-family: "Open Sans", serif;
  }

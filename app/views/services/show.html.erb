@@ -11,7 +11,6 @@
       <%= render 'shared/card', service: @service %>
       <%= link_to "Book this now", new_service_booking_path(@service), class: 'book-button', "data-no-turbolink": true %>
     </div>
-
     <div class="col-sm-8">
       <div id="map"
         data-markers="<%= @marker.to_json %>"
