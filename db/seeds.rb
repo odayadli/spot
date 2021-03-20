@@ -121,7 +121,7 @@ user10 = User.new(first_name: 'Harry',
 user10.profile_pic.attach(io: file, filename: 'trainer10.jpg', content_type: 'image/jpg')
 user10.save!
 
-file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1614424257/cycling2_1_gqlrop.jpg')
+file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1616246663/gilly_e8v4bv.jpg')
 user11 = User.new(first_name: 'Gilly',
                  last_name: 'Rikardsson',
                  email: 'abbalover@gmail.com',
@@ -196,7 +196,7 @@ service2.save!
 
 
 puts user4
-file = URI.open('https://images.unsplash.com/photo-1544368666-40de09f53bbf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
+file = URI.open('https://images.unsplash.com/photo-1495555687398-3f50d6e79e1e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
 service3 = Service.new(trainer: user4,
                        category: category4,
                        details: 'Be the best you!',
@@ -226,7 +226,7 @@ service5.photo.attach(io: file, filename: 'service6.jpg', content_type: 'image/j
 service5.save!
 
 puts user7
-file = URI.open('https://images.unsplash.com/photo-1609899494145-417d7327ea9e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80.jpg')
+file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1616256330/bojo_ju3msk.jpg')
 service6 = Service.new(trainer: user7,
                        category: category4,
                        details: 'Mojo with Bojo!',
@@ -246,10 +246,10 @@ service7.photo.attach(io: file, filename: 'service8.jpg', content_type: 'image/j
 service7.save!
 
 puts user9
-file = URI.open('https://images.unsplash.com/photo-1588906467706-5b5db3c388bf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
+file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1616256832/dumble_bjhznx.jpg')
 service8 = Service.new(trainer: user9,
-                       category: category4,
-                       details: 'From Muggle to Magic!',
+                       category: category2,
+                       details: 'Do you even Leviosa?!',
                        price_per_hour: '16',
                        service_address: 'London, England, United Kingdom')
 service8.photo.attach(io: file, filename: 'service9.jpg', content_type: 'image/jpg')
