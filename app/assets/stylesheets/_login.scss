@@ -14,8 +14,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  // font-family: 'Opens-sans';
-  // background-color: rgba(255, 255, 255, 0.8);
   padding: 20px 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -32,6 +30,7 @@
 
 .account-login{
   color: white;
+  font-size: 4em;
 }
 
 .email {
@@ -46,10 +45,16 @@
   color: white;
 }
 
-.links{
-  color: white;
+.links{ 
+  a{
+    color: white;
+  }
 }
 
 .my-bookings{
   margin-left: 93px;
+}
+
+.input-login{
+  border-radius: 20px;
 }
