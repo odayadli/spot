@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
 
-    <link href="https://fonts.googleapis.com/css?family=Days+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <title>Spot | Find your Inner self</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="og:title" content="Global Fitness & Wellness Service">
-    <meta property="og:description" content="Spot offers different fitness programs for individuals or groups.">
-    <meta property="og:image" content="https://res.cloudinary.com/dhj0qswpc/image/upload/v1615307262/anastase-maragos-9dzwzqwzmde-u_1_llixdm.jpg">
-    <meta property="og:url" content="https://www.spot-476.com/">
-    <%= favicon_link_tag asset_path('favicon.ico') %>
+  <link href="https://fonts.googleapis.com/css?family=Days+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <title>Spot | Find your Inner Strength</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:title" content="<%= meta_title %>"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="<%= request.original_url %>"/>
+  <meta property="og:image" content="<%= meta_image %>"/>
+  <meta property="og:description" content="<%= meta_description %>"/>
+  <meta property="og:site_name" content="<%= meta_title %>"/>
+  <%= favicon_link_tag asset_path('favicon.ico') %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application' %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application' %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <script src="http://antenna.io/demo/jquery-bar-rating/jquery.barrating.js"></script>
+  <link href="http://antenna.io/demo/jquery-bar-rating/dist/themes/fontawesome-stars.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <script src="http://antenna.io/demo/jquery-bar-rating/jquery.barrating.js"></script>
-    <link href="http://antenna.io/demo/jquery-bar-rating/dist/themes/fontawesome-stars.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!--    <script src="http://antenna.io/demo/jquery-bar-rating/jquery.barrating.js"></script>-->
+  <!--    <link href="http://antenna.io/demo/jquery-bar-rating/dist/themes/fontawesome-stars.css" rel="stylesheet"/>-->
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<!--    <script src="http://antenna.io/demo/jquery-bar-rating/jquery.barrating.js"></script>-->
-<!--    <link href="http://antenna.io/demo/jquery-bar-rating/dist/themes/fontawesome-stars.css" rel="stylesheet"/>-->
+</head>
 
-  </head>
-
-  <body>
-   <%# <div class="page-container"> %>
-
-      <%= render 'shared/navbar' %>
-
-        <%= yield %>
-
-      <%= render 'shared/flashes' %>
-      <%#= render 'shared/footer' %>
-
-    <%# </div> %>
-
-  </body>
+<body>
+<%= render 'shared/navbar' %>
+<%= yield %>
+<%= render 'shared/footer' %>
+<%= render 'shared/flashes' %>
+</body>
 </html>

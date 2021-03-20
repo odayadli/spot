@@ -12,6 +12,8 @@ const initAutocomplete_2 = () => {
   if (addressInput) {
     places({ container: addressInput });
   }
+
+
 };
 export { initAutocomplete };
 export { initAutocomplete_2 };

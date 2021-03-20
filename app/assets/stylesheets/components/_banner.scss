@@ -13,7 +13,7 @@ a:hover {
 
 
 .banner-image {
-  height: 450px;
+  height: 100vh;
   width: auto;
   color: #eee;
   position: relative;
@@ -26,7 +26,7 @@ a:hover {
   color: white;
 }
 
-.banner-text h3 {font-size: 36px; font-family: "Days One"; margin-bottom: 33px;}
+.banner-text h3 {font-size: 50px; font-family: "Days One"; margin-bottom: 33px;}
 // input {width: 271px; height: 43px; border-radius: 2px; border: none; padding-left: 12px;}
 .search-button {width: 117px; height: 30px; background-color: #ff1e1e; color: white; border: none; border-radius: 2px;}
 .search-button:hover {background-color: rgba($color: #ff1e1e, $alpha: 0.8);}

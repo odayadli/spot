@@ -1,76 +1,15 @@
-<!--<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">-->
-<%#= link_to "#", class: "navbar-brand" do %>
-<%#= image_tag "https://res.cloudinary.com/ds188a5lw/image/upload/v1614432256/nav_logo_ogyoqc.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<%# end %>
-
-<!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--    <span class="navbar-toggler-icon"></span>-->
-<!--  </button>-->
-
-
-<!--<div class="centre">-->
-<!--  <div class="nav-left">-->
-<!--    <div class="nav-logo">-->
-<!--      <a href="<%#= root_path%>">-->
-<!--        <img src="https://res.cloudinary.com/ds188a5lw/image/upload/v1615489648/2_dzrs8e.png">-->
-<!--      </a>-->
-<!--    </div>-->
-
-<!--    <ul class="menu-wrap">-->
-<!--      <li><a href="<%#= services_path %>">Find your Trainer</a></li>-->
-      <%# if user_signed_in? %>
-        <%# if current_user.trainer? %>
-<!--        <li>-->
-<!--          <a  href="<%#= my_services_services_path%>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--            Manage your services-->
-<!--          </a>-->
-<!--          <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--            <a class="dropdown-item" href="<%#= my_services_services_path%>">Your services</a>-->
-<!--            <a class="dropdown-item" href="<%#= bookings_bookings_requests_path %>">Booking requests</a>-->
-<!--            <div class="dropdown-divider"></div>-->
-<!--            <a class="dropdown-item" href="<%#= my_bookings_path %>">My bookings</a>-->
-<!--          </div>-->
-<!--        </li>-->
-        <%# else %>
-<!--        <li><a href="<%#= new_user_session_path%>">Become a trainer</a></li>-->
-        <%# end %>
-<!--    </ul>-->
-<!--  </div>-->
-
-
-<%#= link_to "Home", "#", class: "nav-link" %>
-<!--      </li>-->
-<!--      <li class="nav-item">-->
-<%# if user_signed_in? %>
-<%#= link_to "Log out", destroy_user_session_path, method: :delete %>
-<%# else %>
-<%#= link_to "Login", new_user_session_path %>
-<%# end %>
-<!--      </li>-->
-<!--      <li class="nav-item dropdown">-->
-<%# if current_user.profile_pic.attached? %>
-<%#= cl_image_tag current_user.profile_pic.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<%# else %>
-<%#= image_tag "https://kitt.lewagon.com/placeholder/users/odayadli", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<%# end %>
-
-<!--</div>-->
-
-
-
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
   <div class="nav-logo">
     <a href="<%= root_path%>">
-      <%= image_tag "https://res.cloudinary.com/ds188a5lw/image/upload/v1615489648/2_dzrs8e.png", class: "logo-img"%>
+      <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1616093468/2_dzrs8e_j848xn.png", class: "logo-img"%>
       <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1615739986/spot_Logo_1_zm9cci.png", class: "logo-img2"%>
     </a>
   </div>
 
   <ul class="menu-wrap">
     <li><a href="<%= services_path %>">FIND A TRAINER</a></li>
-    <% if user_signed_in? %>
-      <%# if current_user.trainer? %>
+    <% if user_signed_in?%>
       <li>
         <a  href="<%= my_services_services_path%>">
         BECOME A TRAINER
@@ -91,7 +30,7 @@
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <% if current_user.profile_pic.attached? %>
-            <%= cl_image_tag current_user.profile_pic.key, class: "avatar dropdown-toggle profile-avatar zoom", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.profile_pic.key, transformation: {width: 40, height: 40, gravity: "face", radius: "max", crop: "thumb" }, class: "avatar dropdown-toggle zoom", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/odayadli", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
@@ -116,33 +55,3 @@
   </div>
 </div>
 
-
-
-<%# if user_signed_in? %>
-<!--    <div class="nav-right">-->
-<%#= link_to "Log out", destroy_user_session_path, method: :delete %>
-<%# if current_user.profile_pic.attached? %>
-<%#= cl_image_tag current_user.profile_pic.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<%# else %>
-<%#= image_tag "https://kitt.lewagon.com/placeholder/users/odayadli", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<%# end %>
-<!--    </div>-->
-<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-<!--      <ul class="navbar-nav mr-auto">-->
-<!--        <li class="nav-item active">-->
-<!--        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">-->
-<%#= link_to "My services", my_services_services_path, class: "dropdown-item" %>
-<%#= link_to "Booking requests", bookings_bookings_requests_path, class: "dropdown-item" %>
-<%#= link_to "Edit your profile", edit_user_registration_path, class: "dropdown-item" %>
-<%# else %>
-<%# end %>
-<!--    </div>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<%# else %>
-<!--    <div class="nav-right">-->
-<%#= link_to "Login", new_user_session_path %>
-<%# end %>
-<!--  </div>-->
-<!--</div>-->
