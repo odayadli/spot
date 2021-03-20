@@ -4,8 +4,8 @@ footer {background-color: black; padding: 26px 0}
 .footer-clean {
 background-color:#fff;
 color:#fff;
-position: relative;
-top: 312px;
+//position: sticky;
+bottom: 0;
 }
 
 .footer-clean h3 {
@@ -37,18 +37,18 @@ opacity:1;
 text-align:right;
 }
 
-@media (max-width:767px) {
-.footer-clean .item {
-text-align:center;
-padding-bottom:20px;
-}
-}
-
-@media (max-width: 768px) {
-.footer-clean .item.social {
-text-align:center;
-}
-}
+//@media (max-width:767px) {
+//.footer-clean .item {
+//text-align:center;
+//padding-bottom:20px;
+//}
+//}
+//
+//@media (max-width: 768px) {
+//.footer-clean .item.social {
+//text-align:center;
+//}
+//}
 
 .footer-clean .item.social > a {
 font-size:24px;
@@ -71,18 +71,18 @@ opacity:1;
 color: #FF1E1E;
 border: 1px solid #FF1E1E;
 }
-
-@media (max-width:991px) {
-.footer-clean .item.social > a {
-margin-top:40px;
-}
-}
-
-@media (max-width:767px) {
-.footer-clean .item.social > a {
-margin-top:10px;
-}
-}
+//
+//@media (max-width:991px) {
+//.footer-clean .item.social > a {
+//margin-top:40px;
+//}
+//}
+//
+//@media (max-width:767px) {
+//.footer-clean .item.social > a {
+//margin-top:10px;
+//}
+//}
 
 .footer-clean .copyright {
 margin-top:14px;
