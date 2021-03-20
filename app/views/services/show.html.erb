@@ -13,39 +13,39 @@
     </div>
     <div class="col-sm-8">
       <div id="map"
-        data-markers="<%= @marker.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+           data-markers="<%= @marker.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       <div class="booked-times">
         <h3>Unavailable slots:</h3>
         <% @bookings.each do |booking| %>
-         <p> <%= booking.start_date.strftime("%A, %d %b %Y %l:%M %p") %> - <%= booking.end_date.strftime("%l:%M %p") %> </p>
+          <p> <%= booking.start_date.strftime("%A, %d %b %Y %l:%M %p") %> - <%= booking.end_date.strftime("%l:%M %p") %> </p>
         <% end %>
       </div>
     </div>
-   </div>
-    <ul class="list-group" style="margin-top: 30px">
+  </div>
+  <ul class="list-group" style="margin-top: 30px">
     <h3>CUSTOMER REVIEWS:</h3>
-      <% @service.bookings.each do |booking| %>
-        <li class="list-group-item">
-          <div class="d-flex justify-content-start align-items-center">
-            <% if current_user.profile_pic.attached? %>
-              <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3"  %>
-            <% else %>
-              <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
-            <% end %>
-            <div>
-              <% booking.reviews.each do |review| %>
-                <% if review.rating? %>
-                  <% review.rating.times do %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                <% end %>
-                <p><%= review.description %></p>
+    <% @service.bookings.each do |booking| %>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-start align-items-center">
+          <% booking.reviews.each do |review| %>
+        <% if current_user.profile_pic.attached? %>
+            <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3"  %>
+          <% else %>
+            <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
+          <% end %>
+          <div>
+              <% if review.rating? %>
+                <% review.rating.times do %>
+                  <i class="fas fa-star"></i>
                 <% end %>
               <% end %>
-            </div>
-          </div>
-        </li>
-    </ul>
-  </div>
+              <p><%= review.description %></p>
+            <% end %>
+    <% end %>
+    </div>
+    </div>
+    </li>
+  </ul>
+</div>
