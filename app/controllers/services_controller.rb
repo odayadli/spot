@@ -19,7 +19,7 @@ class ServicesController < ApplicationController
         lat: service.latitude,
         lng: service.longitude,
         infoWindow: render_to_string(partial: 'info_window', locals: { service: service }),
-        image_url: helpers.asset_url('service.jpg')
+        image_url: helpers.asset_url('dumbell.png')
       }
     end
   end
@@ -58,7 +58,7 @@ class ServicesController < ApplicationController
         lat: @service.latitude,
         lng: @service.longitude,
         infoWindow: render_to_string(partial: 'info_window', locals: { service: @service }),
-        image_url: helpers.asset_url('service.jpg')
+        image_url: helpers.asset_url('dumbell.png')
       }]
     @bookings = @service.bookings.order(:start_date)
   end
