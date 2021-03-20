@@ -1,13 +1,13 @@
-<div class="home-banner">
-  <div class="banner-image" style="background-color: #010101; url(); background-position: center; background-size: cover; height: 300px;">
-    <!--    <input type="text" placeholder="e.g. SW8 2LP">-->
-    <div class="banner-text" style="left: 40%;  font-family:'Days One';">
-      <h3>YOUR  SERVICES</h3>
-       <div>
+<div class="service">
+  <div class="service-banner" style="background-color: #010101; height: 300px;">
+    <div class="service-center" style="width: 900px; margin: 0 auto;">
+       <h3 style="text-align: center; color: white; padding-top: 120px; padding-bottom: 12px;">YOUR  SERVICES</h3>
+       <div style="text-align: center;">
            <%= link_to "ADD A NEW SERVICE", new_service_path, type: "button", class: "btn btn-danger" %>
        </div>
-       
     </div>
+       
+
   </div>
 </div>
 
@@ -24,7 +24,7 @@
     </div>
     <div class="cards-services">
       <% @services.each do |service| %>
-        <div class="card" style="margin-bottom: 60px; width: 685px;" >
+        <div class="card" style="margin-bottom: 32px; width: 685px;" >
           <div class="card-body">
             <div class="card-photo"  style="position: relative;">
               <%= link_to service_path(service) do %>
@@ -50,11 +50,11 @@
               <p style="color: #ffffff; padding: 1px 14px; border-radius: 8px; width: fit-content; margin: 0 auto; margin-bottom: 1rem; background-color: #ff1e1e;"><%= service.category.name %></p>
               <p style="font-weight: bold; font-size: 18px;">£<%= service.price_per_hour %></p>
               <p style="font-size: 12px; color: #656565;"><%= service.service_address %></p>
-              <p><%= link_to 'Delete Service',
-            service_path(service),
-            method: :delete,
-            data: { confirm: "Please press OK if you want to cancel your booking or cancel to go back to your booking" }  %>
-              </p>
+              <p class="btn danger"><%= link_to 'Delete Service', service_path(service), method: :delete,
+                     data: { confirm: "Please press OK if you want to cancel your booking or cancel to go back to your booking" }  %></p>
+               
+           
+            
             </div>
           </div>
         </div>
