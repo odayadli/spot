@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.service = Service.find(@booking.service_id)
     if @booking.update!(booking_params)
-      redirect_to service_path(@booking)
+      redirect_to booking_path(@booking)
     else
       render :edit
     end
@@ -50,9 +50,9 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    @booking.client = current_user
+    @booking.trainee = current_user
     @booking.destroy
-    redirect_to my_bookings_bookings_path
+    redirect_to my_bookings_path
   end
 
   private
