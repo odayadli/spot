@@ -1,10 +1,10 @@
 <div class="yoga-img">
   <div class="container">
     <h1 class="mybooking"> My Bookings </h1>
-    
 
 
-    <% @current_bookings.each do |booking| %>
+
+    <% @old_bookings.each do |booking| %>
       <div class="booking-product">
         <% if booking.service.photo.attached? %>
         <%= cl_image_tag booking.service.photo.key, crop: :fill %>
@@ -31,11 +31,11 @@
               <%= link_to "Edit my Booking", edit_booking_path(booking), class:"text-white" %>
           </div>
               <% end %>
-              
+
           </div>
         </div>
       </div>
-      
+
             <% end %>
   </div>
 </div>

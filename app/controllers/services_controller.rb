@@ -61,6 +61,7 @@ class ServicesController < ApplicationController
         image_url: helpers.asset_url('dumbell.png')
       }]
     @bookings = @service.bookings.order(:start_date)
+    @booking = Booking.new
   end
 
   def new

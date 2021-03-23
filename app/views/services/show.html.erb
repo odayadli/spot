@@ -9,43 +9,50 @@
   <div class="row">
     <div class="col-sm-4" style="margin-top: 10px">
       <%= render 'shared/card', service: @service %>
-      <%= link_to "Book this now", new_service_booking_path(@service), class: 'book-button', "data-no-turbolink": true %>
     </div>
     <div class="col-sm-8">
       <div id="map"
         data-markers="<%= @marker.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-      <div class="booked-times">
-        <h3>Unavailable slots:</h3>
-        <% @bookings.each do |booking| %>
-         <p> <%= booking.start_date.strftime("%A, %d %b %Y %l:%M %p") %> - <%= booking.end_date.strftime("%l:%M %p") %> </p>
-        <% end %>
-      </div>
     </div>
-   </div>
-    <ul class="list-group" style="margin-top: 30px">
-    <h3>CUSTOMER REVIEWS:</h3>
+  </div>
+  <div>
+  <div class="service-show-h3">
+    <h3>UNAVAILIBLE SLOTS</h3>
+  </div>
+    <div class="booked-times">
+      <% @bookings.each do |booking| %>
+      <li>
+        <%= booking.start_date.strftime("%A, %d %b %Y %l:%M %p") %> - <%= booking.end_date.strftime("%l:%M %p") %>
+      </li>
+      <% end %>
+    </div>
+  </div>
+  <ul class="list-group" style="margin-top: 30px">
+    <div class="service-show-h3">
+      <h3>CUSTOMER REVIEWS</h3>
+    </div>
       <% @service.bookings.each do |booking| %>
         <li class="list-group-item">
           <div class="d-flex justify-content-start align-items-center">
-            <% if current_user.profile_pic.attached? %>
-              <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3"  %>
-            <% else %>
-              <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
-            <% end %>
+          <% if current_user.profile_pic.attached? %>
+            <%= cl_image_tag review.user.profile_pic.key, class: "avatar m-3"  %>
+          <% else %>
+            <%= image_tag "https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-12.jpg", class: "avatar m-3" %>
+          <% end %>
             <div>
-              <% booking.reviews.each do |review| %>
-                <% if review.rating? %>
-                  <% review.rating.times do %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
+            <% booking.reviews.each do |review| %>
+          <% if review.rating? %>
+            <% review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% end %>
+            <p><%= review.description %></p>
+          <% end %>
                 <% end %>
-                <p><%= review.description %></p>
-                <% end %>
-              <% end %>
             </div>
           </div>
         </li>
     </ul>
-  </div>
+</div>
