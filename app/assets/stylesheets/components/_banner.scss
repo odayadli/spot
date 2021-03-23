@@ -17,6 +17,9 @@ a:hover {
   width: auto;
   color: #eee;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner-text {
