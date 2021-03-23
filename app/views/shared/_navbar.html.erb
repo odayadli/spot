@@ -9,14 +9,20 @@
 
   <ul class="menu-wrap">
     <li><a href="<%= services_path %>">FIND A TRAINER</a></li>
-    <% if user_signed_in?%>
+    <% if user_signed_in? && current_user.trainer?%>
       <li>
         <a  href="<%= my_services_services_path%>">
         BECOME A TRAINER
         </a>
       </li>
+      <% elsif !user_signed_in? %>
+      <li>
+        <a  href="<%= new_user_session_path%>">
+          BECOME A TRAINER
+        </a>
+      </li>
     <% else %>
-      <li><a href="<%= new_user_session_path%>"> BECOME A TRAINER</a></li>
+      <li><a href="<%= services_access_denied_path%>"> BECOME A TRAINER</a></li>
     <% end %>
   </ul>
 
@@ -39,7 +45,7 @@
               <%= link_to "Manage your services", my_services_services_path, class: "dropdown-item fas fa-dumbbell" %>
               <%= link_to "Manage your booking requests", bookings_bookings_requests_path, class: "dropdown-item fas fa-book" %>
             <% else %>
-              <%= link_to "Manage my bookings", my_bookings_path, class: "dropdown-item" %>
+              <%= link_to "Manage my bookings", my_bookings_path, class: "dropdown-item fas fa-book" %>
             <% end %>
             <%= link_to "Edit your profile", edit_user_registration_path, class: "dropdown-item fas fa-user" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item  fas fa-sign-out-alt" %>
