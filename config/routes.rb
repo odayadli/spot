@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
              # controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  get  'services/filter'
+  get  'services/filter_price'
+  get  'services/filter_distance'
   get 'bookings/bookings_requests'
+  get 'services/access_denied'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :services do
     resources :bookings, only: %i[new create]

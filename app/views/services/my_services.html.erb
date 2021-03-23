@@ -1,34 +1,27 @@
-<div class="home-banner">
-  <div class="banner-image" style="background-color: #010101; url(); background-position: center; background-size: cover; height: 300px;">
-    <!--    <input type="text" placeholder="e.g. SW8 2LP">-->
-    <div class="banner-text" style="left: 40%;  font-family:'Days One';">
-      <h3>YOUR  SERVICES</h3>
-       <div>
+<div class="service">
+  <div class="service-banner" style="background-color: #010101; height: 300px;">
+    <div class="service-center" style="width: 900px; margin: 0 auto;">
+       <h3 style="text-align: center; color: white; padding-top: 120px; padding-bottom: 12px;">YOUR  SERVICES</h3>
+       <div style="text-align: center;">
            <%= link_to "ADD A NEW SERVICE", new_service_path, type: "button", class: "btn btn-danger" %>
        </div>
-       
     </div>
   </div>
 </div>
-
 <div style="left: 39%; background-image: url('https://images.unsplash.com/photo-1504816858302-62ac38953a43?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1239&q=80.jpg'); background-size: cover;" >
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
-    
-
       <!-- This div is centered and takes 6 columns -->
-    
   <div class='justify-content-center' >
     <div class="float" style="overflow: hidden; margin: 48px 0 16px;">
       <h1 style="color: #333333; font-family:'Days One'; float: left; padding: 0;"></h1>
     </div>
     <div class="cards-services">
       <% @services.each do |service| %>
-        <div class="card" style="margin-bottom: 60px; width: 685px;" >
+        <div class="card" style="margin-bottom: 32px; width: 685px;" >
           <div class="card-body">
             <div class="card-photo"  style="position: relative;">
               <%= link_to service_path(service) do %>
-               
                 <% if service.photo.attached? %>
                   <%= cl_image_tag service.photo.key, class:"background-photo", height: 280, width: 644, crop: :fill %>
                 <% else %>
@@ -36,7 +29,6 @@
                 <% end %>
                 <% if service.trainer.profile_pic.attached? %>
                   <%= cl_image_tag service.trainer.profile_pic.key, class: "avatar-large", alt: "avatar-large" %>
-                  
                 <% end %>
               <%end%>
             </div>
@@ -50,15 +42,11 @@
               <p style="color: #ffffff; padding: 1px 14px; border-radius: 8px; width: fit-content; margin: 0 auto; margin-bottom: 1rem; background-color: #ff1e1e;"><%= service.category.name %></p>
               <p style="font-weight: bold; font-size: 18px;">£<%= service.price_per_hour %></p>
               <p style="font-size: 12px; color: #656565;"><%= service.service_address %></p>
-              <p><%= link_to 'Delete Service',
-            service_path(service),
-            method: :delete,
-            data: { confirm: "Please press OK if you want to cancel your booking or cancel to go back to your booking" }  %>
-              </p>
+              <p class="btn danger"><%= link_to 'Delete Service', service_path(service), method: :delete,
+                     data: { confirm: "Please press OK if you want to cancel your booking or cancel to go back to your booking" }  %></p>
             </div>
           </div>
         </div>
-        
       <% end %>
     </div>
   </div>

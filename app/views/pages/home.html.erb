@@ -2,7 +2,7 @@
   <div class="banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dhj0qswpc/image/upload/v1614374710/banner_photo_vtqti0.jpg'); background-position: center; background-size: cover">
   <div class="banner-text">
     <h3>Find a trainer.<br>Be a trainer.</h3>
-    <%= form_with(url: services_path, method: :get, local: true) do |f| %>
+    <%= form_with(url: services_filter_distance_path, method: :get, local: true) do |f| %>
       <%= text_field_tag :search, params[:search], placeholder: "e.g. SW8 2LP" %>
       <%= f.select :order, ["1km", "5km", "10km", "20km"], class: "distance" %>
       <%= submit_tag 'Search', class: 'search-button' %>
@@ -25,22 +25,22 @@
       <div class="trainers">
         <div class="trainer1" style="box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034)">
           <a href="">
-            <img src="https://res.cloudinary.com/ds188a5lw/image/upload/v1614424257/cycling2_1_gqlrop.jpg">   
-            <h3 class="trainer_name">Gillis Rikardsson</h3>
-            <p class="trainer_description">Let me take you for a spin!</p>
+            <img src="https://res.cloudinary.com/ds188a5lw/image/upload/v1616246663/gilly_e8v4bv.jpg">   
+            <h3 class="trainer_name">Gilly Rikardsson</h3>
+            <p class="trainer_description">I have nothing to offer but blood,toil and sweat!</p>
           </a> 
         </div>
         <div class="trainer2" style="box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034)" >
           <a href="">
-            <img src="https://res.cloudinary.com/ds188a5lw/image/upload/v1614423879/trainer_zavqtc.jpg"> 
-            <h3 class="trainer_name">Oday Abu Saleh</h3>
-            <p class="trainer_description">I have nothing to offer but blood,toil and sweat!</p>
+            <img src="https://res.cloudinary.com/ds188a5lw/image/upload/v1616247046/odal_xihz1w.jpg"> 
+            <h3 class="trainer_name">Odaylia Abu Saleh</h3>
+            <p class="trainer_description">Let me take you for a spin!</p>
           </a>
         </div>
         <div class="trainer3" style="box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034)">
           <a href="">
-            <img src="https://res.cloudinary.com/ds188a5lw/image/upload/v1614384771/Mask_Group_lphqhh.jpg">   
-            <h3 class="trainer_name">Roberto Silva</h3>
+            <img src="https://res.cloudinary.com/ds188a5lw/image/upload/v1616246036/roberta_y0b7ne.jpg">   
+            <h3 class="trainer_name">Roberta Silva</h3>
             <p class="trainer_description">With great gains come great responsibility.</p>
           </a>
         </div>

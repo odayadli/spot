@@ -4,6 +4,7 @@
   transition: 0.5s background-color ease;
   position: relative;
   height: 80px;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,8 +18,14 @@
   width: 40px;
 }
 
-.navbar-lewagon-black {
-  background-color: grey;
+.navbar-lewagon-white {
+ border-bottom: 2px solid black;
+  //color: #F4F4F4;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
 
 
@@ -50,11 +57,12 @@
   color: black;
   box-shadow: 6px 5px 5px 1px;
   text-align: center;
-  margin-right: 100px;
+  //margin-right: 100px;
 }
 
 .logo-img{
   width: 40px;
+  margin-bottom: 12px;
 }
 
 .logo-img2{

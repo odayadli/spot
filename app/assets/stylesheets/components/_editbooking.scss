@@ -1,12 +1,12 @@
 .sports-img{
-	background: asset_url('sports.jpg');
+	background-image: url("sports.jpg");
     background-repeat: no-repeat;
-    width: 100vw;
+    //width: 100vw;
     height: 100vh;
     background-size: cover;
     background-position: center;
 	opacity: 0.9;
-	position: absolute;
+	//position: absolute;
 }
 
 
@@ -59,7 +59,7 @@
 .booking-form .form-booking-style {
     margin-left: auto;
     margin-right: auto;
-    width: 63em;
+    width: 64em;
     height: 25em;
     padding-left: 470px;
     padding-right: 18px;
@@ -131,8 +131,8 @@
 	margin-bottom: 50px;
 }
 
-#submit-changes {
-	margin-top: 30px !important;
+.submit-changes {
+	margin-left:15px;
 }
 
 
