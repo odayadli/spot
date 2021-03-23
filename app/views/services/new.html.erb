@@ -15,7 +15,7 @@
                                  border-radius:12px;
                                  box-shadow:2px 2px 2px rgba(0, 0, 0, 0.1)">
  
- 
+
  <%= simple_form_for @service do |f| %> 
   
 
@@ -26,7 +26,7 @@
   <%= f.input :photo, as: :file %>
   
   Is it indoor service?<%= f.input :indoor, as: :boolean, checked_value: true, unchecked_value: false %>
- 
+
   <div style="margin-left :5px; display:inline-block;">
   <%= f.button :submit, class: 'btn btn-danger' %>
   <%= link_to "Return to My Services", my_services_services_path, class: "btn btn-secondary" %>
