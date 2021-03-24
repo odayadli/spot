@@ -7,7 +7,7 @@
     </a>
   </div>
 
-  <ul class="menu-wrap">
+  <ul class="menu-wrap" style="margin-right: 114px">
     <li><a href="<%= services_path %>">FIND A TRAINER</a></li>
     <% if user_signed_in? && current_user.trainer?%>
       <li>
@@ -53,8 +53,7 @@
         </li>
       <% else %>
         <div>
-       <%= link_to "Forgot password?", user_password_path %>
-        <%= link_to "Login", new_user_session_path, class: "fas fa-sign-in-alt" %>
+        <%= link_to "Login", new_user_session_path %>
     <% end %>
       </div>
     </ul>
