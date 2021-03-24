@@ -46,6 +46,7 @@ class BookingsController < ApplicationController
 
   def bookings_requests
     @bookings_requested = Booking.select { |booking| booking.service.trainer == current_user }
+    render bookings_bookings_requests_path
   end
 
   def destroy
@@ -58,6 +59,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :status)
   end
 end
