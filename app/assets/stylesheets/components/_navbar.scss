@@ -57,7 +57,12 @@
   color: black;
   box-shadow: 6px 5px 5px 1px;
   text-align: center;
-  //margin-right: 100px;
+  margin-right: 100px;
+  position: justify-center;
+}
+
+.menu-wrap a{
+  text-transform: bold;
 }
 
 .logo-img{
