@@ -9,9 +9,9 @@
 					<div class="booking-form">
 						<div class="booking-bg">
 							<div class="form-header">
-								<h1 class="text1"> Spotter <%= @service.name %> </h1>
-                <h6 class="text2"> <b>Details:</b> <%= @service.details %> </h6>
-                <h6 class="text2"> <b>Hourly Rate:</b> <%= @service.price_per_hour %>£ </h6>
+								<h1 class="text1"> SPOTTER: <span><%=@service.trainer.first_name%></span> </h1>
+                <h6 class="text2"> <b>DETAILS:</b> <span><%= @service.details %></span> </h6>
+                <h6 class="text2"> <b>HOURLY RATE:</b> <span><%= @service.price_per_hour %>£ </span></h6>
 							</div>
 						</div>
 
@@ -39,7 +39,7 @@
 							</div>
                   <div class= "button-wrapper">
                     <div class="button-animated">
-                      <div class="text-animated">Get spotted</div>
+                      <div class="text-animated">GET SPOTTED</div>
                     </div>
                     <%= f.submit class: "hidden", id: "review-submit" %>
                     <div class="progress-bar"></div>

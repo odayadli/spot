@@ -30,13 +30,14 @@ text-align: center;
 }
 
 .text-animated {
-  color: #71DFBE;
+  color: white;
   font: bold 1.25rem/1 poppins;
   position: absolute;
   top: 50%;
   transform: translateY(-52%);
   left: 0;
   right: 0;
+  font-family: "Days One";
 }
 
 .progress-bar {
