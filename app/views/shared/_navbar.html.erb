@@ -7,22 +7,22 @@
     </a>
   </div>
 
-  <ul class="menu-wrap" style="margin-right: 114px">
-    <li><a href="<%= services_path %>">FIND A TRAINER</a></li>
+  <ul class="menu-wrap">
+    <li class="nav-option"><a href="<%= services_path %>">FIND A TRAINER</a></li>
     <% if user_signed_in? && current_user.trainer?%>
-      <li>
+      <li class="nav-option">
         <a  href="<%= my_services_services_path%>">
         BECOME A TRAINER
         </a>
       </li>
       <% elsif !user_signed_in? %>
-      <li>
+      <li class="nav-option">
         <a  href="<%= new_user_session_path%>">
           BECOME A TRAINER
         </a>
       </li>
     <% else %>
-      <li><a href="<%= services_access_denied_path%>"> BECOME A TRAINER</a></li>
+      <li class="nav-option"><a href="<%= services_access_denied_path%>"> BECOME A TRAINER</a></li>
     <% end %>
   </ul>
 
@@ -52,8 +52,8 @@
           </div>
         </li>
       <% else %>
-        <div>
-        <%= link_to "Login", new_user_session_path %>
+        <div style="font-family: Days One">
+        <%= link_to "LOGIN", new_user_session_path %>
     <% end %>
       </div>
     </ul>
