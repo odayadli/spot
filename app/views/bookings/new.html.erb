@@ -21,7 +21,7 @@
 								<div class="col-md-12">
 									<div class="form-group ">
 
-										<%= simple_form_for [@service, @booking] do |f| %>
+										<%= simple_form_for [@service, @booking], html: { id: "my-form"} do |f| %>
 
                     						<%= f.input :start_date, as: :datetime, required: false, input_html: {class: "datetimepicker"} %>
 
