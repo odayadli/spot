@@ -42,7 +42,7 @@ basicTimeline
     delay: 500,
     duration: 750,
     borderRadius: 80,
-    backgroundColor: "#71DFBE"
+    backgroundColor: "#00ffcb"
   })
   .add({
     targets: pathEl,

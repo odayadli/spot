@@ -1,20 +1,20 @@
 .background-login{
-    background: asset_url('basketball.jpg');
+    background: asset_url('runner.jpg');
     background-repeat: no-repeat;
-    width: 100vw;
+    //width: 100vw;
     height: 100vh;
     background-size: cover;
     background-position: center;
 	  opacity: 0.9;
-	  // position: absolute;
+	  //position: absolute;
 }
 
 .centered {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px 20px;
+  top: 17%;
+  left: 37%;
+  //transform: translate(-50%, -50%);
+  //padding: 20px 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -33,21 +33,30 @@
   font-size: 4em;
 }
 
-.email {
+.optional{
+  color: black;
+}
+
+.input-login{
+  color: black;
+}
+.string .password{
   color: white;
 }
 
-.password{
+.input-login .log{
+  color: #F4F4F4;
+}
+.string .email{
   color: white;
 }
-
 .form-check{
-  color: white;
+  //color: white;
 }
 
 .links{ 
   a{
-    color: white;
+    color: black;
   }
 }
 

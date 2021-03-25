@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.service = Service.find(@booking.service_id)
     if @booking.update!(booking_params)
-      redirect_to service_path(@booking)
+      redirect_to booking_path(@booking)
     else
       render :edit
     end
@@ -46,18 +46,19 @@ class BookingsController < ApplicationController
 
   def bookings_requests
     @bookings_requested = Booking.select { |booking| booking.service.trainer == current_user }
+    render bookings_bookings_requests_path
   end
 
   def destroy
     @booking = Booking.find(params[:id])
-    @booking.client = current_user
+    @booking.trainee = current_user
     @booking.destroy
-    redirect_to my_bookings_bookings_path
+    redirect_to my_bookings_path
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :status)
   end
 end

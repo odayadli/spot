@@ -51,15 +51,19 @@
 
 
 .menu-wrap {
-  line-height: 50px;
-  margin-bottom: 0px;
-  border-bottom: 3px solid;
+  line-height: 28px;
+  margin-bottom: 0;
   color: black;
-  box-shadow: 6px 5px 5px 1px;
+  //box-shadow: 6px 5px 5px 1px;
   text-align: center;
-  margin-right: 100px;
+  margin-right: 114px;
+  font-family: Days One, serif;
 }
 
+.nav-option{
+  border-bottom: 3px solid;
+
+}
 .logo-img{
   width: 40px;
   margin-bottom: 12px;
@@ -86,4 +90,7 @@
 
 .zoom:hover {
   transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.dropdown-item {
+  padding: 0.5rem 1.5rem;
 }

@@ -1,17 +1,19 @@
 
-<div class="container">
-  <h1>How was your spot session with <%= @booking.service.trainer.first_name%></h1>
-
-  <div class="row">
-
-  <div class="col-sm-6">
-    <%= render 'shared/card', service: @booking.service %>
+  <div class="home-banner">
+    <div class="banner-image" style="background-color: #010101; url(); background-position: center; background-size: cover; height: 250px;">
+      <h3>TELL US HOW YOUR SPOT SESSION WITH <span><%=@booking.service.trainer.first_name%></span> WENT?</h3>
+    </div>
   </div>
 
-
-  <div class="col-sm-6">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <%= render 'shared/card', service: @booking.service %>
+    </div>
+  <div class="col-sm-8">
+    <div class="review-card">
     <%= simple_form_for [@booking, @review], id: "review-form" do |f| %>
-    <%= f.input :description, label: "Write a review here!" %>
+    <%= f.input :description, label: "Write a review here!", id: "review-form-h3"  %>
     <%= f.input :rating, label: "Give your spotter a rating!", input_html: {id:"rating", class: "hidden", value: ""}%>
         <i class="fas fa-star hidden selected"></i>
         <i class="fas fa-star" data-value="1"></i>
@@ -19,20 +21,23 @@
         <i class="fas fa-star" data-value="3"></i>
         <i class="fas fa-star" data-value="4"></i>
         <i class="fas fa-star" data-value="5"></i>
-    <div class= "button-wrapper">
-      <div class="button-animated">
-        <div class="text-animated">Submit</div>
+      <div class= "button-wrapper">
+        <div class="button-animated">
+          <div class="text-animated">Submit</div>
+        </div>
+        <%= f.submit class: "hidden", id: "review-submit" %>
+        <div class="progress-bar"></div>
+          <svg x="0px" y="0px" viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;">
+            <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
+          </svg>
       </div>
-      <%= f.submit class: "hidden", id: "review-submit" %>
-      <div class="progress-bar"></div>
-        <svg x="0px" y="0px" viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;">
-          <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
-        </svg>
-    </div>
     <% end %>
   </div>
+</div>
+</div>
 </div>
 
 <link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
 
 
+</div>

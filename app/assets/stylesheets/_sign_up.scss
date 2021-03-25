@@ -7,6 +7,10 @@
     border-top-right-radius: 20px;
     text-align: left;
     color: black;
+    position: relative;
+    /* left: 488px; */
+    margin-right: auto;
+    margin-left: auto;
 }
 
 h2{
@@ -33,7 +37,7 @@ h2{
 .background{
     background: asset_url('basketball.jpg');
     background-repeat: no-repeat;
-    width: 100vw;
+    //width: 100vw;
     height: 100vh;
     background-size: cover;
     background-position: center;

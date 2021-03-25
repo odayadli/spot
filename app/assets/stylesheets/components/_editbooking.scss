@@ -1,12 +1,12 @@
 .sports-img{
 	background-image: url("sports.jpg");
     background-repeat: no-repeat;
-    width: 100vw;
+    //width: 100vw;
     height: 100vh;
     background-size: cover;
     background-position: center;
 	opacity: 0.9;
-	position: absolute;
+	//position: absolute;
 }
 
 
@@ -105,15 +105,25 @@
 }
 
 .text1{
-    color: white;
-    padding-top: 30px;
+  color: white;
+  padding-top: 30px;
 	text-align: center;
+  font-family: "Days One";
+}
+
+.text1 span{
+  text-transform: uppercase;
 }
 
 .text2{
-    text-align: left;
-    padding-top: 20px;
-    color: white;
+  text-align: left;
+  padding-top: 20px;
+  color: white;
+  font-family: "Days One";
+}
+
+.text2 span{
+  color: #ff1e1e;
 }
 
 .form-group {
