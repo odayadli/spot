@@ -12,7 +12,7 @@
     </div>
   <div class="col-sm-8">
     <div class="review-card">
-    <%= simple_form_for [@booking, @review], id: "review-form" do |f| %>
+    <%= simple_form_for [@booking, @review], html: { id: "my-form"} do |f| %>
     <%= f.input :description, label: "Write a review here!", id: "review-form-h3"  %>
     <%= f.input :rating, label: "Give your spotter a rating!", input_html: {id:"rating", class: "hidden", value: ""}%>
         <i class="fas fa-star hidden selected"></i>

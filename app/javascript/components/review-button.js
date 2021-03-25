@@ -53,8 +53,10 @@ basicTimeline
 }
 
 $(".button-animated").click(function () {
+  event.preventDefault()
   basicTimeline.play();
-  setTimeout(() => $('#review-submit').click(), 3000);
+  setTimeout(()=> document.getElementById("my-form").submit(), 6000);
+  //setTimeout(() => $('#review-submit').click(), 3000);
 });
 }
 
