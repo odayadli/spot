@@ -42,7 +42,7 @@ user2.save!
 file = URI.open('https://images.unsplash.com/photo-1518459031867-a89b944bffe4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1025&q=80.jpg')
 user3 = User.new(first_name: 'Heather',
                  last_name: 'Swanson',
-                 email: 'becchristopherson@gmail.com',
+                 email: 'hswanson@gmail.com',
                  password: '123456',
                  trainer: true,
                  address: 'London')
@@ -51,7 +51,7 @@ user3.save!
 
 
 
-file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1614886871/Mask_Group_mt7fbx.jpg')
+file = URI.open('https://images.unsplash.com/photo-1590048531448-abc75e64f28d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80.jpg')
 user4 = User.new(first_name: 'George',
                  last_name: 'Ellery-Masson',
                  email: 'gellery2395@gmail.com',
@@ -71,39 +71,39 @@ user5 = User.new(first_name: 'Roberta',
 user5.profile_pic.attach(io: file, filename: 'trainer5.jpg', content_type: 'image/jpg')
 user5.save!
 
-file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1614886872/image_19_y7fdui.jpg')
+file = URI.open('https://images.unsplash.com/photo-1598971862175-e5b46121680a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80.jpg')
 user6 = User.new(first_name: 'Michael',
-                 last_name: 'Jackson',
-                 email: 'heehee@gmail.com',
+                 last_name: 'Johnson',
+                 email: 'mj1@gmail.com',
                  password: '123456',
                  trainer: true,
                  address: 'London')
 user6.profile_pic.attach(io: file, filename: 'trainer6.jpg', content_type: 'image/jpg')
 user6.save!
 
-file = URI.open('https://i.dailymail.co.uk/i/pix/2014/10/28/1414531187667_wps_38_Mayor_of_London_Boris_Joh.jpg')
-user7 = User.new(first_name: 'Boris',
-                 last_name: 'Johnson',
-                 email: 'mojowithbojo@gmail.com',
+file = URI.open('https://images.unsplash.com/photo-1581803118522-7b72a50f7e9f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80.jpg')
+user7 = User.new(first_name: 'Harold',
+                 last_name: 'Smith',
+                 email: 'haroldsmith@gmail.com',
                  password: '123456',
                  trainer: true,
                  address: 'London')
 user7.profile_pic.attach(io: file, filename: 'trainer7.jpg', content_type: 'image/jpg')
 user7.save!
 
-file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1614886871/image_22_nrb452.jpg')
+file = URI.open('https://images.unsplash.com/photo-1597452494947-f2986526d1be?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80.jpg')
 user8 = User.new(first_name: 'Clark',
-                 last_name: 'Kent',
-                 email: 'superkent@gmail.com',
+                 last_name: 'Jones',
+                 email: 'superjones@gmail.com',
                  password: '123456',
                  trainer: true,
                  address: 'London')
 user8.profile_pic.attach(io: file, filename: 'trainer8.jpg', content_type: 'image/jpg')
 user8.save!
 
-file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1614886871/image_23_mfpur9.jpg')
-user9 = User.new(first_name: 'Albus',
-                 last_name: 'Dumbelldore',
+file = URI.open('https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80.jpg')
+user9 = User.new(first_name: 'Albert',
+                 last_name: 'Donell',
                  email: 'dumblesauce@gmail.com',
                  password: '123456',
                  trainer: true,
@@ -112,8 +112,8 @@ user9.profile_pic.attach(io: file, filename: 'trainer9.jpg', content_type: 'imag
 user9.save!
 
 file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1614886871/image_21_ax4aue.jpg')
-user10 = User.new(first_name: 'Harry',
-                 last_name: 'Potter',
+user10 = User.new(first_name: 'Jamie',
+                 last_name: 'Pond',
                  email: 'horcruxes4life@gmail.com',
                  password: '123456',
                  trainer: true,
@@ -121,8 +121,8 @@ user10 = User.new(first_name: 'Harry',
 user10.profile_pic.attach(io: file, filename: 'trainer10.jpg', content_type: 'image/jpg')
 user10.save!
 
-file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1616246663/gilly_e8v4bv.jpg')
-user11 = User.new(first_name: 'Gilly',
+file = URI.open('https://images.unsplash.com/photo-1585892478508-130c50eb7a69?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
+user11 = User.new(first_name: 'Gillis',
                  last_name: 'Rikardsson',
                  email: 'abbalover@gmail.com',
                  password: '123456',
@@ -131,7 +131,7 @@ user11 = User.new(first_name: 'Gilly',
 user11.profile_pic.attach(io: file, filename: 'trainer11.jpg', content_type: 'image/jpg')
 user11.save!
 
-file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1616247046/odal_xihz1w.jpg')
+file = URI.open('https://images.unsplash.com/photo-1571019613576-2b22c76fd955?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80.jpg')
 user12 = User.new(first_name: 'Odaylia',
                  last_name: 'Abu Saleh',
                  email: 'alloday@gmail.com',
@@ -153,9 +153,9 @@ category1 = Category.create!(name: 'Yoga')
 category2 = Category.create!(name: 'Crossfit')
 category3 = Category.create!(name: 'Pilates')
 category4 = Category.create!(name: 'Boxing')
-category5 = Category.create!(name: 'Tennis')
-category6 = Category.create!(name: 'Diving')
-category7 = Category.create!(name: 'Horse Racing')
+category5 = Category.create!(name: 'Bodybuilding')
+category6 = Category.create!(name: 'Powerlifting')
+category7 = Category.create!(name: 'Cardio')
 
 
 puts 'Seeding services'
@@ -166,28 +166,28 @@ service = Service.new(
                       category: category1,
                       details: 'General Manager of Fitness!',
                       price_per_hour: '15',
-                      service_address: 'France Lynch, Stroud, England, United Kingdom')
+                      service_address: 'London, England, United Kingdom')
 service.photo.attach(io: file, filename: 'service.jpg', content_type: 'image/jpg')
 service.user_id = user1.id
 service.save!
 
 puts user2
-file = URI.open('https://images.unsplash.com/photo-1517963628607-235ccdd5476c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1951&q=80.jpg')
+file = URI.open('https://images.unsplash.com/photo-1520948013839-62020f374478?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
 service1 = Service.new(trainer: user2,
                        category: category2,
                        details: 'Bella Gains!',
                        price_per_hour: '11',
-                       service_address: 'Lyon, Auvergne-Rhône-Alpes, France')
+                       service_address: 'London, England, United Kingdom')
 service1.photo.attach(io: file, filename: 'service2.jpg', content_type: 'image/jpg')
 service1.save!
 
 puts user3
-file = URI.open('https://images.unsplash.com/flagged/photo-1566064352554-f36ef0ef23b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
+file = URI.open('https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80.jpg')
 service2 = Service.new(trainer: user3,
                        category: category3,
                        details: 'Try and keep up!',
                        price_per_hour: '13',
-                       service_address: 'Marsett, Richmondshire, England, United Kingdom')
+                       service_address: 'London, England, United Kingdom')
 service2.photo.attach(io: file, filename: 'service3.jpg', content_type: 'image/jpg')
 service2.save!
 
@@ -196,7 +196,7 @@ service2.save!
 
 
 puts user4
-file = URI.open('https://images.unsplash.com/photo-1495555687398-3f50d6e79e1e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
+file = URI.open('https://images.unsplash.com/flagged/photo-1574005280900-3ff489fa1f70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
 service3 = Service.new(trainer: user4,
                        category: category4,
                        details: 'Be the best you!',
@@ -206,7 +206,7 @@ service3.photo.attach(io: file, filename: 'service4.jpg', content_type: 'image/j
 service3.save!
 
 puts user5
-file = URI.open('https://images.unsplash.com/photo-1519859660545-3dea8ddf683c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80.jpg')
+file = URI.open('https://images.unsplash.com/photo-1584863231364-2edc166de576?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
 service4 = Service.new(trainer: user5,
                        category: category5,
                        details: 'Power from Portugal',
@@ -218,18 +218,18 @@ service4.save!
 puts user6
 file = URI.open('https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80.jpg')
 service5 = Service.new(trainer: user6,
-                       category: category6,
-                       details: 'Hee Hee,Shamon and much more!',
+                       category: category2,
+                       details: 'Be the person you can be!',
                        price_per_hour: '15',
                        service_address: 'London, England, United Kingdom')
 service5.photo.attach(io: file, filename: 'service6.jpg', content_type: 'image/jpg')
 service5.save!
 
 puts user7
-file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1616256330/bojo_ju3msk.jpg')
+file = URI.open('https://images.unsplash.com/photo-1580261450046-d0a30080dc9b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=653&q=80.jpg')
 service6 = Service.new(trainer: user7,
-                       category: category4,
-                       details: 'Mojo with Bojo!',
+                       category: category6,
+                       details: 'You will not regret it!',
                        price_per_hour: '10',
                        service_address: 'London, England, United Kingdom')
 service6.photo.attach(io: file, filename: 'service7.jpg', content_type: 'image/jpg')
@@ -239,17 +239,17 @@ puts user8
 file = URI.open('https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
 service7 = Service.new(trainer: user8,
                        category: category6,
-                       details: 'Definitely not Superman ✊',
+                       details: 'The guy for powerlifting',
                        price_per_hour: '12',
                        service_address: 'London, England, United Kingdom')
 service7.photo.attach(io: file, filename: 'service8.jpg', content_type: 'image/jpg')
 service7.save!
 
 puts user9
-file = URI.open('https://res.cloudinary.com/ds188a5lw/image/upload/v1616256832/dumble_bjhznx.jpg')
+file = URI.open('https://images.unsplash.com/photo-1558611848-73f7eb4001a1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80.jpg')
 service8 = Service.new(trainer: user9,
                        category: category2,
-                       details: 'Do you even Leviosa?!',
+                       details: 'Do you even Lift?!',
                        price_per_hour: '16',
                        service_address: 'London, England, United Kingdom')
 service8.photo.attach(io: file, filename: 'service9.jpg', content_type: 'image/jpg')
@@ -258,18 +258,18 @@ service8.save!
 puts user10
 file = URI.open('https://images.unsplash.com/photo-1590487988357-5233b152a9b7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1895&q=80.jpg')
 service9 = Service.new(trainer: user10,
-                       category: category3,
-                       details: 'Horcrux Life!',
+                       category: category5,
+                       details: 'Go hard or go home!',
                        price_per_hour: '17',
                        service_address: 'London, England, United Kingdom')
 service9.photo.attach(io: file, filename: 'service10.jpg', content_type: 'image/jpg')
 service9.save!
 
 puts user11
-file = URI.open('https://images.unsplash.com/photo-1606013686856-bf2b1c2997e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
+file = URI.open('https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg')
 service10 = Service.new(trainer: user11,
                        category: category2,
-                       details: 'The winner takes it all! -Abba ',
+                       details: 'The winner takes it all!',
                        price_per_hour: '8',
                        service_address: 'London, England, United Kingdom')
 service10.photo.attach(io: file, filename: 'service11.jpg', content_type: 'image/jpg')
