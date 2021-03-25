@@ -5,15 +5,15 @@ class ServicesController < ApplicationController
 
     @services = if params[:search].present?
                   Service.joins(:category).where('service_address ILIKE :search OR categories.name ILIKE :search', search: "%#{params[:search]}%")
-                elsif params[:tag].present?
-                  Service.where('service_address ILIKE :tag', tag: "%#{params[:tag]}%")
+                # elsif params[:tag].present?
+                #   Service.where('service_address ILIKE :tag', tag: "%#{params[:tag]}%")
                 else
                   Service.all
 
                 end
-    unless params[:service_address].blank?
-      @service = Service.select { |v| v.service_address == params[:service_address] }
-    end
+    # unless params[:service_address].blank?
+    #   @service = Service.select { |v| v.service_address == params[:service_address] }
+    # end
 
     @markers = @services.geocoded.map do |service|
       {
@@ -37,22 +37,18 @@ class ServicesController < ApplicationController
   end
 
   def filter_distance
-    @services = case params[:search]
-                when '1km'
-                  @services = Service.where('service_address ILIKE :search ', search: "%#{params[:search]}%")
-                  @services.near('service_address', 1)
-                when '5km'
-                  @services = Service.where('service_address ILIKE :search ', search: "%#{params[:search]}%")
-                  @services.near('service_address', 5)
-                when '10km'
-                  @services = Service.where('service_address ILIKE :search ', search: "%#{params[:search]}%")
-                  @services.near('service_address', 10)
-                when '20km'
-                  @services = Service.where('service_address ILIKE :search ', search: "%#{params[:search]}%")
-                  @services.near('service_address', 20)
-                else
-                  Service.all
-                end
+    # @services = case params[:search]
+    #             when '1km'
+    #               @services.near('service_address', 1)
+    #             when '5km'
+    #               @services.near('service_address', 5)
+    #             when '10km'
+    #               @services.near('service_address', 10)
+    #             when '20km'
+    #               @services.near('service_address', 20)
+    #             else
+    #               Service.all
+    #             end
     # @services = params[:category_filter]
   end
 
