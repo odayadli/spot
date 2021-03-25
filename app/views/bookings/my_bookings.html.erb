@@ -2,6 +2,7 @@
   <div class="container">
     <h1 class="mybooking"> My Bookings </h1>
     <% @current_bookings.each do |booking| %>
+      
       <div class="booking-product">
         <% if booking.service.photo.attached? %>
         <%= cl_image_tag booking.service.photo.key, crop: :fill %>
