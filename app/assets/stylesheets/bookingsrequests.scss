@@ -45,25 +45,39 @@
      padding: 16px;
   }
 
-  .mybooking{
+  .mybooking1{
       text-align: center;
       margin-top: 80px;
       margin-bottom: 30px;
       color:white;
       background: rgba(0, 0, 0, 0.9);
       padding: 40px;
-      width: 400px;
+      width: 450px;
       border-radius: 5px;
       margin-left: auto;
       margin-right: auto;
 
   }
 
-  .pendingbooking{
-   text-align: end;
-   font-size: 1.4em;
-   font-family: "Open Sans", serif;
-   text-align: inherit;
-   font-weight: bold;
-   color: #ff1e1e;
-  }
+  .pendingbookings{
+    text-align: end;
+    font-size: 1.4em;
+    font-family: "Open Sans", serif;
+    text-align: inherit;
+    font-weight: bold;
+    color: #ff1e1e;
+   }
+
+   .request-button{
+
+      a{
+          color: white;
+      }
+   }
+
+   .confirmbutton{
+       color:black;
+       font-weight: bold;
+       padding: 10px 10px;
+       margin: 10px;
+   }
