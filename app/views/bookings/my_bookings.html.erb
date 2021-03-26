@@ -16,7 +16,7 @@
         <h3 class="price"><b>Total price:</b> £<%= booking.service.price_per_hour.to_i * ((booking.end_date).to_time - (booking.start_date).to_time)/ 3_600 %></h3>
         <div class="cancel-edit">
           <% if booking.start_date > DateTime.now %>
-          
+          <%#  %>
           <div class="btn btn-dark booking-button">
               <%= link_to 'Cancel Booking',
                           booking_path(booking),
