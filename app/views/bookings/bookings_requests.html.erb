@@ -11,17 +11,19 @@
               <%= image_tag "https://res.cloudinary.com/dhj0qswpc/image/upload/v1614381454/Mask_Group-1_rihl6o.jpg",class: "book-img" %>`
             <% end %>
             <div class="booking-product-infos">
-              <h2 class="booked"><span class="redtext"><%= booking.service.trainer.first_name %></span> has requested to book for <%= ((booking.end_date).to_time - (booking.start_date).to_time) / 3_600 %>hours</h2>
+              <h2 class="booked"><span class="redtext"><%= booking.service.trainer.first_name %></span> has requested to book for <%= ((booking.end_date).to_time - (booking.start_date).to_time) / 3_600.round %>hours</h2>
               <p class="b-dates"><b>From</b> <%= booking.start_date.strftime("%A, %d %b %Y %l:%M %p") %> <br> <b>To</b> <%= booking.end_date.strftime("%A, %d %b %Y %l:%M %p") %></p>
               <h4 class="pendingbookings"><%= booking.status ? 'Confirmed' : 'Pending confirmation' %></h4>
                     <%= simple_form_for booking do |f| %>
-                    <div class="confirmbooking">
-                      Confirm<%= f.input_field :status, as: :boolean, checked_value: true, unchecked_value: false %> 
+
+                    <div class="confirmbooking ">
+                      Confirm <%= f.input_field :status, as: :boolean, checked_value: true, unchecked_value: false %> 
                       <%= f.button :submit, "Confirm", :class => 'confirmbutton btn btn-dark'  %>
                     <% end %>
                     </div>
-
               <% end %>
+              
+              <div class="brequest-button">
           <div class="btn btn-dark booking-button request-button">
               <%= link_to "Edit my Booking", edit_booking_path(booking), class:"text-white" %>
           </div>
@@ -31,6 +33,7 @@
                             booking_path(booking),
                             method: :delete,
                             data: { confirm: "Please press ok if you want to cancel your booking or cancel to go back to your booking" } %>
+              </div>
               </div>
           </div>
             <% end %>
