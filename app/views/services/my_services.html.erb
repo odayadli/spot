@@ -1,6 +1,6 @@
 <div class="service">
   <div class="service-banner" style="background-color: #010101; height: 300px;">
-    <div class="service-center" style="width: 900px; margin: 0 auto;">
+    <div class="service-center" style="width: 900px; margin-left: 310px">
        <h3 style="text-align: center; color: white; padding-top: 120px; padding-bottom: 12px;">YOUR  SERVICES</h3>
        <div style="text-align: center;">
            <%= link_to "ADD A NEW SERVICE", new_service_path, type: "button", class: "btn btn-danger" %>
@@ -18,7 +18,7 @@
     </div>
     <div class="cards-services">
       <% @services.each do |service| %>
-        <div class="card" style="margin-bottom: 32px; width: 685px;" >
+        <div class="card" style="margin-bottom: 32px; width: 685px; left: 38px" >
           <div class="card-body">
             <div class="card-photo"  style="position: relative;">
               <%= link_to service_path(service) do %>
