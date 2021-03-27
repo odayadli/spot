@@ -1,0 +1,25 @@
+<div class="review-card">
+  <h4>Tell us how your session with <span><%=@booking.service.trainer.first_name%></span> was!</h4>
+    <%= simple_form_for [@booking, @review], id: "review-form" do |f| %>
+    <%= f.input :description, label: "Write your review below", placeholder: "What did you like or dislike? Did you focus on something specific?" %>
+  <div class="star-rating">
+  <%= f.input :rating, label: "Give your spotter a rating!", input_html: {id:"rating", class: "hidden", value: ""}%>
+      <i class="fas fa-star hidden selected"></i>
+      <i class="fas fa-star" data-value="1"></i>
+      <i class="fas fa-star" data-value="2"></i>
+      <i class="fas fa-star" data-value="3"></i>
+      <i class="fas fa-star" data-value="4"></i>
+      <i class="fas fa-star" data-value="5"></i>
+    <div class= "button-wrapper">
+      <div class="button-animated">
+        <div class="text-animated">SUBMIT</div>
+      </div>
+        <%= f.submit class: "hidden", id: "review-submit" %>
+        <div class="progress-bar"></div>
+        <svg x="0px" y="0px" viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;">
+          <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
+        </svg>
+    </div>
+  </div>
+  <% end %>
+</div>
