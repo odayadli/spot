@@ -1,9 +1,4 @@
 
-#rating {
-    height: 1px;
-    padding: 0;
-}
-
 .review-button{
 text-align: center;
 }
@@ -76,6 +71,7 @@ svg {
 .fa-star {
   color: yellow;
   cursor: pointer;
+  padding: 10px;
 }
 
 .selected ~ .fa-star {
@@ -86,18 +82,44 @@ svg {
   display: none;
 }
 
-.review-card{
-  margin-top: 10px;
-  padding: 1.25rem;
-  border: 1px solid hsl(0, 0%, 40%);
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
+#rating {
+    height: 1px;
+    padding: 0;
+    position: absolute;
 }
 
-.review-form-h3{
+.star-rating{
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.review-card{
+  padding: 1.25rem;
+  //border: 1px solid hsl(0, 0%, 40%);
+  overflow: hidden;
+  //background: white;
+  //box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-content: center;
+  text-align: center;
+  //display: contents;
+  font-family: 'Days One';
+  padding-bottom: 50px;
+}
+
+.review-form{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.review-card h4{
+  font-family: "Days One", serif;
+}
 
 
+textarea.form-control {
+  height: auto;
+  width: 100%;
+  line-height: 40px;
 }
