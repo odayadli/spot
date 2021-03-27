@@ -24,6 +24,47 @@ text-align: center;
   position: absolute;
 }
 
+.review-button{
+  background: #2B2D2F;
+  height: 80px;
+  width: 200px;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 4px;
+  position: absolute;
+}
+
+.review-new-button{
+  background: #2B2D2F;
+  height: 80px;
+  width: 200px;
+  text-align: center;
+  //top: 50%;
+  //transform: translateY(-50%);
+  //left: 0;
+  //right: 0;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 4px;
+  //position: absolute;
+}
+
+.text-review{
+  color: white;
+  font: bold 1.25rem/1 poppins;
+  //position: absolute;
+  //top: 50%;
+  //transform: translateY(-52%);
+  //left: 0;
+  //right: 0;
+  font-family: "Days One";
+}
+
 .text-animated {
   color: white;
   font: bold 1.25rem/1 poppins;

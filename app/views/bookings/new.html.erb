@@ -2,57 +2,57 @@
 
 <div class="rope-img">
 
-<div class="section">
-		<div class="section-center">
-			<div class="container">
-				<div class="row">
-					<div class="booking-form">
-						<div class="booking-bg">
-							<div class="form-header">
-								<h1 class="text1"> SPOTTER: <span><%=@service.trainer.first_name%></span> </h1>
-                <h6 class="text2"> <b>DETAILS:</b> <span><%= @service.details %></span> </h6>
-                <h6 class="text2"> <b>HOURLY RATE:</b> <span><%= @service.price_per_hour %>£ </span></h6>
-							</div>
-						</div>
+  <div class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          <div class="booking-form">
+            <div class="booking-bg">
+              <div class="form-header">
+                <h1 class="text1"> SPOTTER: <span><%= @service.trainer.first_name %></span></h1>
+                <h6 class="text2"><b>DETAILS:</b> <span><%= @service.details %></span></h6>
+                <h6 class="text2"><b>HOURLY RATE:</b> <span><%= @service.price_per_hour %>£ </span></h6>
+              </div>
+            </div>
 
-							<div class="form-booking-style">
-						<%# <form> %>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group ">
+            <div class="form-booking-style">
+              <%# <form> %>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group ">
 
-										<%= simple_form_for [@service, @booking], html: { id: "my-form"} do |f| %>
+                    <%= simple_form_for [@service, @booking], html: { id: "my-form" } do |f| %>
 
-                    						<%= f.input :start_date, as: :datetime, required: false, input_html: {class: "datetimepicker"} %>
-
-
-									</div>
-								</div>
+                      <%= f.input :start_date, as: :datetime, required: false, input_html: { class: "datetimepicker" } %>
 
 
-								<div class="col-md-12">
-									<div class="form-group">
-										 <%= f.input :end_date, as: :datetime, required: false, input_html: {class: "datetimepicker"} %>
-									</div>
+                      </div>
+                      </div>
 
-								</div>
-							</div>
-                  <div class= "button-wrapper">
-                    <div class="button-animated">
-                      <div class="text-animated">GET SPOTTED</div>
+
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <%= f.input :end_date, as: :datetime, required: false, input_html: { class: "datetimepicker" } %>
+                        </div>
+                        <div class="d-flex">
+                        <%= f.submit class: 'review-new-button text-review' %>
+                        </div>
+                      </div>
+                      </div>
+                      <!--                  <div class= "button-wrapper">-->
+                      <!--                    <div class="button-animated">-->
+                      <!--                      <div class="text-animated">GET SPOTTED</div>-->
+                      </div>
+                      <!--                    <div class="progress-bar"></div>-->
+                      <!--                      <svg x="0px" y="0px" viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;">-->
+                      <!--                        <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />-->
+                      <!--                      </svg>-->
+                      </div>
+                      <% end %>
                     </div>
-                    <%= f.submit class: "hidden", id: "review-submit" %>
-                    <div class="progress-bar"></div>
-                      <svg x="0px" y="0px" viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;">
-                        <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
-                      </svg>
-                  </div>
-                 <% end %>
-							</div>
-						<%# </form> %>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        <%# </form> %>
+      </div>
+    </div>
+  </div>
+</div>
+
