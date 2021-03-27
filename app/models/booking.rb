@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :trainee, class_name: 'User', foreign_key: 'user_id'
   belongs_to :service
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   # validate :end_date_after_start_date
   #
   # private
