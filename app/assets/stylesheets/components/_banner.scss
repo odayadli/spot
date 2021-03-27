@@ -1,5 +1,21 @@
+h1{
+  font-family: "Days One", serif;
+  padding-top: 0px;
+
+}
+
+h2{
+  font-family: "Days One", serif;
+  padding-top: 00px;
+}
+
 h3 {
   font-family: "Days One", serif;}
+
+h4 {
+  font-family: "Days One", serif;
+}
+
 p {
   font-family: "Open Sans", serif;}
 a {color: black;}
@@ -50,12 +66,33 @@ a:hover {
   position: justify-center;
 }
 // input {width: 271px; height: 43px; border-radius: 2px; border: none; padding-left: 12px;}
-.search-button {width: 117px; height: 30px; background-color: #ff1e1e; color: white; border: none; border-radius: 2px;}
-.search-button:hover {background-color: rgba($color: #ff1e1e, $alpha: 0.8);}
+.search-button {
+  width: 117px;
+  height: 30px;
+  background-color: #ff1e1e;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-family: "Days One", serif;
+}
+.search-button:hover {
+  background-color: rgba($color: #ff1e1e, $alpha: 0.85);
+}
 
+.headder1{
+  font-family: "Days One", serif;
+  text-align: center;
+  padding-top: 20px;
+}
 
-.centre {width: 1200px; margin: 0 auto;}
-.top-rated {margin-top: 54px; margin-bottom: 100px; overflow: hidden;}
+.centre {
+  width: 1200px;
+  margin: 0
+  auto;
+  font-family: "Days One", serif;
+}
+
+.top-rated {margin-top: 50px; margin-bottom: 50px; overflow: hidden;}
 .trainers_title {font-size: 24px; margin-bottom: 27px;}
 .trainer1, .trainer2, .trainer3, .trainer4, .trainer5, .trainer6, .trainer7, .trainer8, .trainer9, .trainer10, .trainer11, .trainer12, {width: 32%; float: left; margin-right: 2%; font-family: "Days One"; margin-bottom: 48px;}
 .trainer1 img, .trainer2 img, .trainer3 img, .trainer4 img, .trainer5 img, .trainer6 img, .trainer7 img, .trainer8 img, .trainer9 img, .trainer10 img, .trainer11 img, .trainer12 img, {width: 100%;}

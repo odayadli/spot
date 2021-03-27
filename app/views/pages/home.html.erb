@@ -1,16 +1,17 @@
 <div class="home-banner">
   <div class="banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dhj0qswpc/image/upload/v1614374710/banner_photo_vtqti0.jpg'); background-position: center; background-size: cover">
     <div class="banner-homepage">
-      <h3>FIND A <span>SPOTTER.</span> <br>BE A <span>SPOTTER.</span> </h3>
+      <h3>FIND A <span>SPOTTER</span> <br>BE A <span>SPOTTER</span> </h3>
       <%= form_with(url: services_path, method: :get, local: true) do |f| %>
-        <%= text_field_tag :search, params[:search], placeholder: "e.g. SW8 2LP" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Postcode or location" %>
         <%= f.select :order, ["1km", "5km", "10km", "20km"], class: "distance" %>
-        <%= submit_tag 'Search', class: 'search-button' %>
+        <%= submit_tag 'Serarch', class: 'search-button' %>
       <% end %>
       <%#= form_with(url: services_path, method: :get, local: true) do |form| %>
         <%#= select_tag 'service_id', options_for_select(@services.collect{ |u| [u.service_address] })%>
         <%#= form.submit "Sort" %>
       <%# end%>
+      <h4>Search for activity in your area</h4>
     </div>
 <!--    <input type="text" placeholder="e.g. SW8 2LP">-->
   </div>
@@ -18,20 +19,24 @@
 
 <div class="contents">
   <div class="centre">
+    <div class="headder1">
+      <h2>A PLATFORM WHICH BRINGS PEOPLE TOGHETHER, WHO ARE LOOKING TO:</h2>
+      <h3>1. Find a personal trainer (<span>SPOTTER</span>)</h3>
+      <h3>2. Become a personal trainer (<span>SPOTTER</span>)</h3>
     <div class="top-rated">
-      <h3 class="trainers_title">Top Rated Trainers in London</h3>
+      <h3 class="trainers_title">Top rated spotters in London</h3>
       <div class="trainers">
         <div class="trainer1" style="box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034)">
           <a href="">
 
-            <img src="https://images.unsplash.com/photo-1606335544053-c43609e6155d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80.jpg">   
+            <img src="https://images.unsplash.com/photo-1606335544053-c43609e6155d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80.jpg">
             <h3 class="trainer_name">Bill Thornton</h3>
             <p class="trainer_description">I have nothing to offer but blood,toil and sweat!</p>
           </a>
         </div>
         <div class="trainer2" style="box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034)" >
           <a href="">
-            <img src="https://images.unsplash.com/photo-1578924608828-79a71150f711?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1054&q=80.jpg"> 
+            <img src="https://images.unsplash.com/photo-1578924608828-79a71150f711?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1054&q=80.jpg">
             <h3 class="trainer_name">Gary Maxwell</h3>
 
             <p class="trainer_description">Let me take you for a spin!</p>
@@ -39,14 +44,17 @@
         </div>
         <div class="trainer3" style="box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034)">
           <a href="">
-            <img src="https://images.unsplash.com/photo-1535469618671-e58a8c365cbd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80.jpg">   
+            <img src="https://images.unsplash.com/photo-1535469618671-e58a8c365cbd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80.jpg">
             <h3 class="trainer_name">Martha Silva</h3>
             <p class="trainer_description">With great gains come great responsibility.</p>
           </a>
         </div>
       </div>
     </div>
-
+  <h3>Unlimited offering across all activities<h3>
+  <h3> Strength and Conditioning | CrossFit | Calisthenics | | Yoga | Dance | Boxing | Tennis</h3>
+    <br>
+    <br>
     <div class="cities_wrap">
        <h3 class="city-title">Browse by Cities</h3>
         <div class="cities">
