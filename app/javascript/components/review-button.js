@@ -55,7 +55,7 @@ basicTimeline
 $(".button-animated").click(function () {
   event.preventDefault()
   basicTimeline.play();
-  setTimeout(()=> document.getElementById("my-form").submit(), 6000);
+  setTimeout(()=> document.getElementById("review-submit").submit(), 6000);
   //setTimeout(() => $('#review-submit').click(), 3000);
 });
 }
