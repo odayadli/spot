@@ -34,10 +34,10 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr()
   initMapbox()
   initReviewStar()
-  initReviewButton()
-   $(function() {
-      $('#rating').barrating({
-        theme: 'fontawesome-stars'
-      });
-   });
+  // initReviewButton()
+  //  $(function() {
+  //     $('#rating').barrating({
+  //       theme: 'fontawesome-stars'
+  //     });
+  //  });
 });
