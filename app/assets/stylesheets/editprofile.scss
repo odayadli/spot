@@ -1,9 +1,48 @@
 .editaccount{
-    background: rgba(0, 0, 0, 0.8);
+    // background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     padding-left: 50px;
     padding-right: 50px;
     margin-bottom: 90px;
     border-top-left-radius: 20px;
 
+}
+
+.pilates{
+    background: asset_url('pilates.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+}
+
+.edityourprofile{
+    color: white;
+    font-family: "Nunito", "Helvetica", "sans-serif";
+    margin: 30px 30px;
+}
+
+.black{
+    background: asset_url('black.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    
+}
+
+.text-class1{
+    color:white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#user_profile_pic{
+    margin-bottom: 15px;
+}
+
+.button-edit{
+    margin-bottom: 10px;
 }
