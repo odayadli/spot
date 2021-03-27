@@ -7,6 +7,7 @@
     background-position: center;
     opacity: 0.9;
     //position: absolute;
+  min-height: 120vh;
 }
 
 .card-product {
@@ -45,18 +46,48 @@
      padding: 16px;
   }
 
-  .mybooking{
+  .mybooking1{
       text-align: center;
       margin-top: 80px;
       margin-bottom: 30px;
       color:white;
       background: rgba(0, 0, 0, 0.9);
       padding: 40px;
-      width: 400px;
+      width: 450px;
       border-radius: 5px;
       margin-left: auto;
       margin-right: auto;
 
   }
 
-  
+  .pendingbookings{
+    text-align: end;
+    font-size: 1.4em;
+    font-family: "Open Sans", serif;
+    text-align: inherit;
+    font-weight: bold;
+    color: #ff1e1e;
+   }
+
+   .request-button{
+
+      a{
+          color: white;
+      }
+   }
+
+   .confirmbutton{
+       color:white;
+       font-weight: bold;
+       padding: 10px 10px;
+       margin: 10px;
+   }
+
+   .brequest-button{
+    text-align: end;
+     margin-bottom: 26px;
+   }
+
+   .confirmbooking{
+    font-size: 1.2em;
+   }

@@ -1,6 +1,6 @@
 <div class="service">
   <div class="service-banner" style="background-color: #010101; height: 300px;">
-    <div class="service-center" style="width: 900px; margin: 0 auto;">
+    <div class="service-center" style="width: 900px; margin-left: 310px">
        <h3 style="text-align: center; color: white; padding-top: 120px; padding-bottom: 12px;">YOUR  SERVICES</h3>
        <div style="text-align: center;">
            <%= link_to "ADD A NEW SERVICE", new_service_path, type: "button", class: "btn btn-danger" %>
@@ -8,7 +8,7 @@
     </div>
   </div>
 </div>
-<div style="left: 39%; background-image: url('https://images.unsplash.com/photo-1504816858302-62ac38953a43?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1239&q=80.jpg'); background-size: cover;" >
+<div style="background-image: url('https://images.unsplash.com/photo-1504816858302-62ac38953a43?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1239&q=80.jpg'); background-size: cover; min-height: 60vh" >
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
       <!-- This div is centered and takes 6 columns -->
@@ -18,7 +18,7 @@
     </div>
     <div class="cards-services">
       <% @services.each do |service| %>
-        <div class="card" style="margin-bottom: 32px; width: 685px;" >
+        <div class="card" style="margin-bottom: 32px; width: 685px; left: 38px" >
           <div class="card-body">
             <div class="card-photo"  style="position: relative;">
               <%= link_to service_path(service) do %>
@@ -28,7 +28,7 @@
                   <%= image_tag "https://images.unsplash.com/photo-1517344800994-80b20463999c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80.jpg", width: '640', height: '280' %>
                 <% end %>
                 <% if service.trainer.profile_pic.attached? %>
-                  <%= cl_image_tag service.trainer.profile_pic.key, class: "avatar-large", alt: "avatar-large" %>
+                  <%= cl_image_tag service.trainer.profile_pic.key, class: "avatar-my-service", alt: "avatar-my-service" %>
                 <% end %>
               <%end%>
             </div>
